@@ -1,7 +1,5 @@
 <?php
 
-/* @var $this yii\web\View */
-use yii\widgets\LinkPager;
 
 $this->title=$film->name;
 echo $this->title;

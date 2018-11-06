@@ -108,7 +108,7 @@ class SiteController extends Controller
     /**
      * 类别页面
      */
-    public function actionCategory(){
+    /*public function actionCategory(){
         $id = Yii::$app->request->get("id",0);
         if (empty($id)){
             $id=1;
@@ -123,16 +123,31 @@ class SiteController extends Controller
         $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 10]);
         $datas = $query->offset($pages->offset)->orderBy(['id' => SORT_DESC])->limit($pages->limit)->all();
         return $this->render('category',['type'=>$type,'curType'=>$curType,'datas'=>$datas,'page' => $pages]);
-    }
+    }*/
 
     /**
      * 列表页面
      */
     public function actionList(){
-        $this->layout="list";
+        $id = Yii::$app->request->get("id",0);
+        if (empty($id)){
+            $id=1;
+        }
+        $sid = Yii::$app->request->get("sid",0);
+        if (!empty($sid)){
+
+        }
+
+        $curType = TType::findOne(['id'=>$id]);
         $this->layoutData(false);
-        $type = TType::find()->where()->orderBy("sort_id asc")->all();
-        return $this->render('list',['type'=>$type]);
+        $this->layout="list";
+        $type = TType::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
+        //查询
+        $query = TFilm::find()->where(['type'=>$type]);
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 10]);
+        $datas = $query->offset($pages->offset)->orderBy(['id' => SORT_DESC])->limit($pages->limit)->all();
+        return $this->render('list',['type'=>$type,'curType'=>$curType,'datas'=>$datas,'page' => $pages]);
     }
 
     /**

@@ -31,13 +31,13 @@ $this->title="1";
         <div class="col-lg-wide-75 col-xs-1 padding-0">
             <div class="stui-pannel_hd">
                 <div class="stui-pannel__head clearfix">
-                    <a class="more text-muted pull-right" href="/Column/index1.html">更多 <i class="icon iconfont icon-more"></i></a>
-                    <h3 class="title"><img src="/images/icon_1.png"><a href="/Column/index1.html">电影</a></h3>
+                    <a class="more text-muted pull-right" href="/site/list-1.html">更多 <i class="icon iconfont icon-more"></i></a>
+                    <h3 class="title"><img src="/images/icon_1.png"><a href="/site/list-1.html">电影</a></h3>
                     <ul class="nav nav-text pull-right hidden-sm hidden-xs">
                         <?php
                             if(!empty($subType)){
                             foreach ($subType as $item){?>
-                                <li><a href="list/<?=$item->id?>" class="text-muted"><?=$item->name?></a> <span class="split-line"></span></li>
+                                <li><a href="/site/list-1-<?=$item->id?>.html" class="text-muted"><?=$item->name?></a> <span class="split-line"></span></li>
                             <?php } }?>
                     </ul>
                 </div>

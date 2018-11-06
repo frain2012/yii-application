@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 use yii\widgets\LinkPager;
 
-$this->title="1";
+$this->title="category";
 ?>
 <!--类别-->
 <div class="stui-pannel stui-pannel-bg clearfix">
