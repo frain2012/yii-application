@@ -157,8 +157,9 @@ class SiteController extends Controller
         $this->layout="play";
         $this->layoutData(false);
         $film = TFilm::findOne(['id'=>$id]);
-
-        return $this->render('play',['film'=>$film]);
+        //猜你喜欢
+        $datas = TFilm::findBySql("SELECT * FROM t_film  WHERE id!=$id  and id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_film))) ORDER BY id LIMIT 0,10")->all();
+        return $this->render('play',['film'=>$film,'datas'=>$datas]);
 
     }
 
