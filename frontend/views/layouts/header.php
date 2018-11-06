@@ -22,10 +22,10 @@
                 </div>
                 <ul class="stui-header__menu type-slide">
                     <li><a href="/">首页</a></li>
-                    <li><a href="/site/list/1.html">电影</a></li>
-                    <li><a href="/site/list/2.html">电视剧</a></li>
-                    <li><a href="/site/list/3.html">动漫</a></li>
-                    <li><a href="/site/list/4.html">综艺</a></li>
+                    <li><a href="/site/list-1.html">电影</a></li>
+                    <li><a href="/site/list-2.html">电视剧</a></li>
+                    <li><a href="/site/list-3.html">动漫</a></li>
+                    <li><a href="/site/list-4.html">综艺</a></li>
                     <li><a href="https://www.tiantk.com">小说</a></li>
                 </ul>
             </div>
