@@ -101,44 +101,27 @@ class SiteController extends Controller
         //综艺
         $variety = TFilm::find()->where(['type'=>4])->limit(10)->all();
         //类型
-        $subType =TType::find()->where(['fid'=>1])->orderBy(" sort_id asc")->all();
+        $subType =TType::find()->orderBy(" sort_id asc")->all();
         return $this->render('index',['movie'=>$movie,'tv'=>$tv,'comic'=>$comic,'variety'=>$variety,'subType'=>$subType]);
     }
-
-    /**
-     * 类别页面
-     */
-    /*public function actionCategory(){
-        $id = Yii::$app->request->get("id",0);
-        if (empty($id)){
-            $id=1;
-        }
-        $curType = TType::findOne(['id'=>$id]);
-        $this->layoutData(false);
-        $this->layout="category";
-        $type = TType::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
-        //查询
-        $query = TFilm::find()->where(['type'=>$type]);
-        $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 10]);
-        $datas = $query->offset($pages->offset)->orderBy(['id' => SORT_DESC])->limit($pages->limit)->all();
-        return $this->render('category',['type'=>$type,'curType'=>$curType,'datas'=>$datas,'page' => $pages]);
-    }*/
 
     /**
      * 列表页面
      */
     public function actionList(){
+        //父类型
         $id = Yii::$app->request->get("id",0);
         if (empty($id)){
             $id=1;
         }
+        $curType = TType::findOne(['id'=>$id]);
+        //子类型
         $sid = Yii::$app->request->get("sid",0);
         if (!empty($sid)){
 
         }
 
-        $curType = TType::findOne(['id'=>$id]);
+
         $this->layoutData(false);
         $this->layout="list";
         $type = TType::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();

@@ -36,9 +36,10 @@ $this->title="1";
                     <ul class="nav nav-text pull-right hidden-sm hidden-xs">
                         <?php
                             if(!empty($subType)){
-                            foreach ($subType as $item){?>
+                            foreach ($subType as $item){    if ($item->fid==1){
+                                ?>
                                 <li><a href="/site/list-1-<?=$item->id?>.html" class="text-muted"><?=$item->name?></a> <span class="split-line"></span></li>
-                            <?php } }?>
+                            <?php } } }?>
                     </ul>
                 </div>
             </div>
@@ -88,39 +89,9 @@ $this->title="1";
                     <li><a target="_blank" href="/film/index32934.html" title="完美陌生人(西班牙版)"><span class="text-muted pull-right">BD高清</span><span class="badge">10</span>完美陌生人(西..</a></li>
                 </ul>
             </div>
-            <div class="stui-pannel_hd">
-                <div class="stui-pannel__head clearfix">
-                    <a class="more text-muted pull-right" href="/search.php?searchtype=5&amp;tid=1">更多 <i class="icon iconfont icon-more"></i></a>
-                    <h3 class="title"><img src="/images/icon_25.png">筛选</h3>
-                </div>
-            </div>
-            <div class="stui-pannel_bd col-pd">
-                <ul class="stui-vodlist__screen clearfix">
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;area=大陆" title="大陆">大陆</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;area=香港" title="香港">香港</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;area=台湾" title="台湾">台湾</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;area=日本" title="日本">日本</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;area=韩国" title="韩国">韩国</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;area=欧美" title="欧美">欧美</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;area=泰国" title="泰国">泰国</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;area=其他" title="其他">其他</a></li>
-                </ul>
-                <ul class="stui-vodlist__screen top-line-dot clearfix">
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2018" title="2018">2018</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2017" title="2017">2017</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2016" title="2016">2016</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2015" title="2015">2015</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2014" title="2014">2014</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2013" title="2013">2013</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2012" title="2012">2012</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2011" title="2011">2011</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2010" title="2010">2010</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2009" title="2009">2009</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2008" title="2008">2008</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=2007" title="2007">2007</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=1&amp;year=more" title="更早">更早</a></li>
-                </ul>
-            </div>
+            <!--right-->
+            <?php include "right.php"?>
+            <!--right-->
         </div>
     </div>
 </div>
@@ -133,16 +104,15 @@ $this->title="1";
         <div class="col-lg-wide-75 col-xs-1 padding-0">
             <div class="stui-pannel_hd">
                 <div class="stui-pannel__head clearfix">
-                    <a class="more text-muted pull-right" href="/Column/index2.html">更多 <i class="icon iconfont icon-more"></i></a>
-                    <h3 class="title"><img src="/images/icon_2.png"><a href="/Column/index2.html">电视剧</a></h3>
+                    <a class="more text-muted pull-right" href="/site/list-2.html">更多 <i class="icon iconfont icon-more"></i></a>
+                    <h3 class="title"><img src="/images/icon_2.png"><a href="/site/list-2">电视剧</a></h3>
                     <ul class="nav nav-text pull-right hidden-sm hidden-xs">
-                        <li><a href="/Column/index13.html" class="text-muted">国产剧</a> <span class="split-line"></span></li>
-                        <li><a href="/Column/index14.html" class="text-muted">台湾剧</a> <span class="split-line"></span></li>
-                        <li><a href="/Column/index15.html" class="text-muted">香港剧</a> <span class="split-line"></span></li>
-                        <li><a href="/Column/index16.html" class="text-muted">欧美剧</a> <span class="split-line"></span></li>
-                        <li><a href="/Column/index29.html" class="text-muted">海外剧</a> <span class="split-line"></span></li>
-                        <li><a href="/Column/index30.html" class="text-muted">韩剧</a> <span class="split-line"></span></li>
-                        <li><a href="/Column/index31.html" class="text-muted">日剧</a> <span class="split-line"></span></li>
+                        <?php
+                        if(!empty($subType)){
+                            foreach ($subType as $item){    if ($item->fid==2){
+                                ?>
+                                <li><a href="/site/list-2-<?=$item->id?>.html" class="text-muted"><?=$item->name?></a> <span class="split-line"></span></li>
+                            <?php } } }?>
                     </ul>
                 </div>
             </div>
@@ -192,39 +162,9 @@ $this->title="1";
                     <li><a target="_blank" href="/film/index35878.html" title="X档案第七季"><span class="text-muted pull-right">22集已完结</span><span class="badge">10</span>X档案第七季</a></li>
                 </ul>
             </div>
-            <div class="stui-pannel_hd">
-                <div class="stui-pannel__head clearfix">
-                    <a class="more text-muted pull-right" href="/search.php?searchtype=5&amp;tid=2">更多 <i class="icon iconfont icon-more"></i></a>
-                    <h3 class="title"><img src="/images/icon_25.png">筛选</h3>
-                </div>
-            </div>
-            <div class="stui-pannel_bd col-pd">
-                <ul class="stui-vodlist__screen clearfix">
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;area=大陆" title="大陆">大陆</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;area=香港" title="香港">香港</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;area=台湾" title="台湾">台湾</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;area=日本" title="日本">日本</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;area=韩国" title="韩国">韩国</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;area=欧美" title="欧美">欧美</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;area=泰国" title="泰国">泰国</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;area=其他" title="其他">其他</a></li>
-                </ul>
-                <ul class="stui-vodlist__screen top-line-dot clearfix">
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2018" title="2018">2018</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2017" title="2017">2017</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2016" title="2016">2016</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2015" title="2015">2015</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2014" title="2014">2014</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2013" title="2013">2013</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2012" title="2012">2012</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2011" title="2011">2011</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2010" title="2010">2010</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2009" title="2009">2009</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2008" title="2008">2008</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=2007" title="2007">2007</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=2&amp;year=more" title="更早">更早</a></li>
-                </ul>
-            </div>
+            <!--right-->
+            <?php include "right.php"?>
+            <!--right-->
         </div>
     </div>
 </div>
@@ -237,8 +177,8 @@ $this->title="1";
         <div class="col-lg-wide-75 col-xs-1 padding-0">
             <div class="stui-pannel_hd">
                 <div class="stui-pannel__head clearfix">
-                    <a class="more text-muted pull-right" href="/Column/index3.html">更多 <i class="icon iconfont icon-more"></i></a>
-                    <h3 class="title"><img src="/images/icon_3.png"><a href="/Column/index3.html">动漫</a></h3>
+                    <a class="more text-muted pull-right" href="/site/list-3.html">更多 <i class="icon iconfont icon-more"></i></a>
+                    <h3 class="title"><img src="/images/icon_3.png"><a href="/site/list-3.html">动漫</a></h3>
                     <ul class="nav nav-text pull-right hidden-sm hidden-xs"></ul>
                 </div>
             </div>
@@ -288,39 +228,9 @@ $this->title="1";
                     <li><a target="_blank" href="/film/index31486.html" title="盛世妆娘"><span class="text-muted pull-right">更新至15集/..</span><span class="badge">10</span>盛世妆娘</a></li>
                 </ul>
             </div>
-            <div class="stui-pannel_hd">
-                <div class="stui-pannel__head clearfix">
-                    <a class="more text-muted pull-right" href="/search.php?searchtype=5&amp;tid=3">更多 <i class="icon iconfont icon-more"></i></a>
-                    <h3 class="title"><img src="/images/icon_25.png">筛选</h3>
-                </div>
-            </div>
-            <div class="stui-pannel_bd col-pd">
-                <ul class="stui-vodlist__screen clearfix">
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;area=大陆" title="大陆">大陆</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;area=香港" title="香港">香港</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;area=台湾" title="台湾">台湾</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;area=日本" title="日本">日本</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;area=韩国" title="韩国">韩国</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;area=欧美" title="欧美">欧美</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;area=泰国" title="泰国">泰国</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;area=其他" title="其他">其他</a></li>
-                </ul>
-                <ul class="stui-vodlist__screen top-line-dot clearfix">
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2018" title="2018">2018</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2017" title="2017">2017</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2016" title="2016">2016</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2015" title="2015">2015</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2014" title="2014">2014</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2013" title="2013">2013</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2012" title="2012">2012</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2011" title="2011">2011</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2010" title="2010">2010</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2009" title="2009">2009</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2008" title="2008">2008</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=2007" title="2007">2007</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=3&amp;year=more" title="更早">更早</a></li>
-                </ul>
-            </div>
+            <!--right-->
+            <?php include "right.php"?>
+            <!--right-->
         </div>
     </div>
 </div>
@@ -333,8 +243,8 @@ $this->title="1";
         <div class="col-lg-wide-75 col-xs-1 padding-0">
             <div class="stui-pannel_hd">
                 <div class="stui-pannel__head clearfix">
-                    <a class="more text-muted pull-right" href="/Column/index4.html">更多 <i class="icon iconfont icon-more"></i></a>
-                    <h3 class="title"><img src="/images/icon_4.png"><a href="/Column/index4.html">综艺</a></h3>
+                    <a class="more text-muted pull-right" href="/site/list-4.html">更多 <i class="icon iconfont icon-more"></i></a>
+                    <h3 class="title"><img src="/images/icon_4.png"><a href="/site/list-4.html">综艺</a></h3>
                     <ul class="nav nav-text pull-right hidden-sm hidden-xs"></ul>
                 </div>
             </div>
@@ -384,39 +294,9 @@ $this->title="1";
                     <li><a target="_blank" href="/film/index33777.html" title="金牌大健谍"><span class="text-muted pull-right">20181022</span><span class="badge">10</span>金牌大健谍</a></li>
                 </ul>
             </div>
-            <div class="stui-pannel_hd">
-                <div class="stui-pannel__head clearfix">
-                    <a class="more text-muted pull-right" href="/search.php?searchtype=5&amp;tid=4">更多 <i class="icon iconfont icon-more"></i></a>
-                    <h3 class="title"><img src="/images/icon_25.png">筛选</h3>
-                </div>
-            </div>
-            <div class="stui-pannel_bd col-pd">
-                <ul class="stui-vodlist__screen clearfix">
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;area=大陆" title="大陆">大陆</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;area=香港" title="香港">香港</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;area=台湾" title="台湾">台湾</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;area=日本" title="日本">日本</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;area=韩国" title="韩国">韩国</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;area=欧美" title="欧美">欧美</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;area=泰国" title="泰国">泰国</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;area=其他" title="其他">其他</a></li>
-                </ul>
-                <ul class="stui-vodlist__screen top-line-dot clearfix">
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2018" title="2018">2018</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2017" title="2017">2017</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2016" title="2016">2016</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2015" title="2015">2015</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2014" title="2014">2014</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2013" title="2013">2013</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2012" title="2012">2012</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2011" title="2011">2011</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2010" title="2010">2010</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2009" title="2009">2009</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2008" title="2008">2008</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=2007" title="2007">2007</a></li>
-                    <li><a href="/search.php?searchtype=5&amp;tid=4&amp;year=more" title="更早">更早</a></li>
-                </ul>
-            </div>
+            <!--right-->
+            <?php include "right.php"?>
+            <!--right-->
         </div>
     </div>
 </div>
