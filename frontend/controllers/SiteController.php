@@ -11,6 +11,8 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\data\Pagination;
+
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
@@ -107,12 +109,20 @@ class SiteController extends Controller
      * 类别页面
      */
     public function actionCategory(){
-        $id = Yii::$app->request->get("id");
+        $id = Yii::$app->request->get("id",0);
+        if (empty($id)){
+            $id=1;
+        }
+        $curType = TType::findOne(['id'=>$id]);
         $this->layoutData(false);
         $this->layout="category";
-        $type = TType::find()->orderBy("sort_id asc")->all();
-
-        return $this->render('category',['type'=>$type]);
+        $type = TType::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
+        //查询
+        $query = TFilm::find()->where(['type'=>$type]);
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 10]);
+        $datas = $query->offset($pages->offset)->orderBy(['id' => SORT_DESC])->limit($pages->limit)->all();
+        return $this->render('category',['type'=>$type,'curType'=>$curType,'datas'=>$datas,'page' => $pages]);
     }
 
     /**
@@ -120,18 +130,40 @@ class SiteController extends Controller
      */
     public function actionList(){
         $this->layout="list";
-        $this->layoutData();
+        $this->layoutData(false);
         $type = TType::find()->where()->orderBy("sort_id asc")->all();
         return $this->render('list',['type'=>$type]);
     }
 
-
+    /**
+     * 详情页面
+     * @return string
+     */
+    public function actionDetail(){
+        $id = Yii::$app->request->get("id",0);
+        $film = TFilm::findOne(['id'=>$id]);
+        $this->layout="detail";
+        $this->layoutData(false);
+        //猜你喜欢
+        $datas = TFilm::findBySql("SELECT * FROM t_film  WHERE id!=$id  and id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_film))) ORDER BY id LIMIT 0,10")->all();
+        return $this->render('detail',['film'=>$film,'datas'=>$datas]);
+    }
 
     /**
-     * Logs in a user.
-     *
-     * @return mixed
+     * 播放页面
      */
+    public function actionPlay(){
+        $id = Yii::$app->request->get("id",0);
+        $this->layout="play";
+        $this->layoutData(false);
+        $film = TFilm::findOne(['id'=>$id]);
+
+        return $this->render('play',['film'=>$film]);
+
+    }
+
+
+
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
@@ -150,118 +182,11 @@ class SiteController extends Controller
         }
     }
 
-    /**
-     * Logs out the current user.
-     *
-     * @return mixed
-     */
+
     public function actionLogout()
     {
         Yii::$app->user->logout();
 
         return $this->goHome();
-    }
-
-    /**
-     * Displays contact page.
-     *
-     * @return mixed
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
-            }
-
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
-    /**
-     * Signs user up.
-     *
-     * @return mixed
-     */
-    public function actionSignup()
-    {
-        $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
-                }
-            }
-        }
-
-        return $this->render('signup', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Requests password reset.
-     *
-     * @return mixed
-     */
-    public function actionRequestPasswordReset()
-    {
-        $model = new PasswordResetRequestForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
-
-                return $this->goHome();
-            } else {
-                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
-            }
-        }
-
-        return $this->render('requestPasswordResetToken', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Resets password.
-     *
-     * @param string $token
-     * @return mixed
-     * @throws BadRequestHttpException
-     */
-    public function actionResetPassword($token)
-    {
-        try {
-            $model = new ResetPasswordForm($token);
-        } catch (InvalidParamException $e) {
-            throw new BadRequestHttpException($e->getMessage());
-        }
-
-        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->session->setFlash('success', 'New password saved.');
-
-            return $this->goHome();
-        }
-
-        return $this->render('resetPassword', [
-            'model' => $model,
-        ]);
     }
 }

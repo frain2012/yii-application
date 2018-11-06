@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+use yii\widgets\LinkPager;
 
 $this->title="1";
 ?>
@@ -10,79 +11,35 @@ $this->title="1";
         <div class="stui-pannel_hd">
             <div class="stui-pannel__head active bottom-line clearfix">
                 <h3 class="title">
-                    <img src="/images/icon_25.png">
-                    动画片
+                    <img src="/images/icon_25.png"><?=$curType->name?>
                 </h3>
                 <ul class="nav nav-page pull-right">
                     <li>
-                        <a href="/Column/index12-0.html">
-                            <i class="icon iconfont icon-back">
-                            </i>
-                        </a>
+                        <a href="/Column/index12-0.html"><i class="icon iconfont icon-back"></i></a>
                     </li>
                     <li>
-                        <a href="/Column/index12-2.html">
-                            <i class="icon iconfont icon-more">
-                            </i>
-                        </a>
+                        <a href="/Column/index12-2.html"><i class="icon iconfont icon-more"></i></a>
                     </li>
                 </ul>
                 <span class="more text-muted pull-right hidden-xs">
 									共有“338”部影片，当前第“1”页
-								</span>
+                </span>
             </div>
             <ul class="stui-screen__list type-slide bottom-line-dot clearfix">
                 <li>
-									<span class="text-muted">
-										按分类
-									</span>
+                    <span class="text-muted">按分类</span>
                 </li>
-                <li>
-                    <a href="/Column/index5.html">
-                        动作片
-                    </a>
-                </li>
-                <li>
-                    <a href="/Column/index6.html">
-                        喜剧片
-                    </a>
-                </li>
-                <li>
-                    <a href="/Column/index7.html">
-                        爱情片
-                    </a>
-                </li>
-                <li>
-                    <a href="/Column/index8.html">
-                        科幻片
-                    </a>
-                </li>
-                <li>
-                    <a href="/Column/index9.html">
-                        战争片
-                    </a>
-                </li>
-                <li>
-                    <a href="/Column/index10.html">
-                        恐怖片
-                    </a>
-                </li>
-                <li>
-                    <a href="/Column/index11.html">
-                        剧情片
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="/Column/index12.html">
-                        动画片
-                    </a>
-                </li>
+                <?php
+                if(!empty($type)){
+                    foreach ($type as $item){?>
+                        <li class="active">
+                            <a href="list/<?=$item->id?>"><?=$item->name?></a>
+                        </li>
+                    <?php } }?>
             </ul>
             <ul class="stui-screen__list type-slide bottom-line-dot clearfix">
                 <li>
-									<span class="text-muted">
-										按地区
-									</span>
+                    <span class="text-muted">按地区</span>
                 </li>
                 <li>
                     <a href="/search.php?searchtype=5&amp;tid=12&amp;area=%E5%A4%A7%E9%99%86" title="大陆">
@@ -127,9 +84,7 @@ $this->title="1";
             </ul>
             <ul class="stui-screen__list type-slide clearfix">
                 <li>
-									<span class="text-muted">
-										按年份
-									</span>
+                    <span class="text-muted">按年份</span>
                 </li>
                 <li>
                     <a href="/search.php?searchtype=5&amp;tid=12&amp;year=2018" title="2018">
@@ -200,33 +155,35 @@ $this->title="1";
         </div>
         <div class="stui-pannel_bd">
             <ul class="stui-vodlist clearfix">
-                <li class="col-md-6 col-sm-4 col-xs-3">
-                    <div class="stui-vodlist__box">
-                        <a class="stui-vodlist__thumb lazyload" target="_blank" href="/film/index34432.html" title="钢铁侠：纳米魔崛起" data-original="https://ww1.sinaimg.cn/large/006MBSBsgy1fvwnio60euj307i0acjrq.jpg" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fvwnio60euj307i0acjrq.jpg&quot;);">
-											<span class="play hidden-xs">
-											</span>
-                            <span class="pic-text text-right">
-												BD高清
-											</span>
-                        </a>
-                        <div class="stui-vodlist__detail">
-                            <h4 class="title text-overflow">
-                                <a target="_blank" href="/film/index34432.html" title="钢铁侠：纳米魔崛起">
-                                    钢铁侠：纳米魔..
+                <?php
+                if(!empty($datas)){
+                    foreach ($datas as $item){?>
+                        <li class="col-md-6 col-sm-4 col-xs-3">
+                            <div class="stui-vodlist__box">
+                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/film/index34432.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fvwnio60euj307i0acjrq.jpg&quot;);">
+											<span class="play hidden-xs"></span>
+                                    <span class="pic-text text-right">BD高清</span>
                                 </a>
-                            </h4>
-                            <p class="text text-overflow text-muted hidden-xs">
-                                诺曼·瑞杜斯 马修·默瑟 凯瑞·华格伦 克莱尔·格兰特
-                            </p>
-                        </div>
-                    </div>
-                </li>
+                                <div class="stui-vodlist__detail">
+                                    <h4 class="title text-overflow">
+                                        <a target="_blank" href="/film/index34432.html" title="<?=$item->cover?>"><?=$item->name?></a>
+                                    </h4>
+                                    <p class="text text-overflow text-muted hidden-xs">
+                                        <?=$item->staring?>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    <?php } }?>
             </ul>
         </div>
     </div>
 </div>
 <!--类别-->
 <!--分页-->
+<ul class="stui-page text-center cleafix">
+<?= LinkPager::widget(['pagination' => $page]); ?>
+</ul>
 <ul class="stui-page text-center cleafix">
     <li>
         <a href="/Column/index12.html">

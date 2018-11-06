@@ -18,7 +18,7 @@ AppAsset::register($this);
     <meta name="renderer" content="webkit|ie-comp|ie-stand" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode(strstr($this->params['config']->title,"#",$this->title)) ?></title>
+    <title><?= Html::encode(strtr($this->params['config']->title,"#",$this->title)) ?></title>
     <meta name="keywords" content="<?= Html::encode($this->params['config']->keywords) ?>" />
     <meta name="description" content="<?= Html::encode($this->params['config']->description) ?>" />
     <?php $this->head() ?>
@@ -29,7 +29,9 @@ AppAsset::register($this);
         <script src="/js/html5shiv.min.js"></script>
         <script src="/js/respond.min.js"></script>
     <![endif]-->
-
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/function.js"></script>
+    <script type="text/javascript" src="/js/play.js"></script>
 
 </head>
 <body>
@@ -61,10 +63,8 @@ AppAsset::register($this);
                     <li><a href="/Column/index1.html"> 电影</a></li>
                     <li><a href="/Column/index2.html"> 电视剧</a></li>
                     <li><a href="/Column/index3.html"> 动漫</a></li>
-                    <li><a href="https://www.yingdou.net/Column/index32.html">午夜</a></li>
-                    <li><a href="https://www.yingdou.net/Column/index28.html">福利</a></li>
-                    <li><a href="https://www.tiantk.com">小说</a></li>
                     <li><a href="https://www.yingdou.net/Column/index4.html">综艺</a></li>
+                    <li><a href="https://www.tiantk.com">小说</a></li>
                 </ul>
             </div>
         </div>
@@ -105,43 +105,9 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 <div class="container">
     <div class="row">
-        <!--公告-->
-        <div class="stui-pannel stui-pannel-bg clearfix">
-            <div class="stui-pannel-box">
-                <div class="stui-pannel_bd">
-                    <div class="col-pd clearfix">
-                        <i class="icon iconfont icon-remind text-red"></i> 公告：网站更换新域名www.itech.wang！！！
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--公告-->
 
         <?= $content ?>
 
-
-        <!--友情链接-->
-        <div class="stui-pannel stui-pannel-bg hidden-sm hidden-xs clearfix">
-            <div class="stui-pannel-box">
-                <div class="stui-pannel_hd">
-                    <div class="stui-pannel__head clearfix">
-                        <h3 class="title"><img src="/images/icon_26.png">友情链接</h3>
-                    </div>
-                </div>
-                <div class="stui-pannel_bd clearfix">
-                    <div class="col-xs-1">
-                        <ul class="stui-link__text clearfix">
-                            <?php
-                                if(!empty($this->params['link'])){
-                                    foreach ($this->params['link'] as $item){?>
-                                <li><a class="text-muted" href="<?=$item->link?>" title="<?=$item->name?>" target="_blank"><?=$item->value?></a></li>
-                            <?php } }?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--友情链接-->
     </div>
 </div>
 
