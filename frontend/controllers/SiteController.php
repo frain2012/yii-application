@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\movie\TChannel;
 use common\models\movie\TConfig;
 use common\models\movie\TFilm;
 use common\models\movie\TFilmDetail;
@@ -143,7 +144,7 @@ class SiteController extends Controller
         $this->layout="detail";
         $this->layoutData(false);
         //渠道列表
-        $channel = TFilm::findBySql("SELECT ta.type,tc.`key`,tc.`name` FROM (SELECT DISTINCT(type) as type FROM t_film_detail WHERE fid=".$id.") ta LEFT JOIN t_channel tc ON tc.id=ta.type")->all();
+        $channel = TChannel::findBySql("SELECT tc.* FROM (SELECT DISTINCT(type) as type FROM t_film_detail WHERE fid=".$id.") ta LEFT JOIN t_channel tc ON tc.id=ta.type")->all();
         //详细列表
         $details = TFilmDetail::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
         //猜你喜欢

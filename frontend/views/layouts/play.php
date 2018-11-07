@@ -23,7 +23,7 @@ AppAsset::register($this);
     <meta name="description" content="<?= Html::encode($this->params['config']->description) ?>" />
     <?php $this->head() ?>
     <script type="text/javascript">
-        var sitePath='', siteUrl='<?=YII::$app->request->hostInfo?>', sitepath='';
+        var siteUrl='<?=YII::$app->request->hostInfo?>';
     </script>
     <!--[if lt IE 9]>
         <script src="/js/html5shiv.min.js"></script>

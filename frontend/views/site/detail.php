@@ -76,222 +76,36 @@ echo $this->title;
     </div>
 </div>
 <!--详情-->
-<!--通道1-->
-<div class="stui-pannel stui-pannel-bg clearfix">
-    <div class="stui-pannel-box">
-        <div class="stui-pannel_hd">
-            <div class="stui-pannel__head bottom-line active clearfix">
-				<span class="more text-muted pull-right">
-					推荐极速线路播放，支持手机看片
-				</span>
-                <h3 class="title">
-                    云播
-                </h3>
+<?php if (!empty($channel)){ foreach ($channel as $item){ ?>
+    <!--通道-->
+    <div class="stui-pannel stui-pannel-bg clearfix">
+        <div class="stui-pannel-box">
+            <div class="stui-pannel_hd">
+                <div class="stui-pannel__head bottom-line active clearfix">
+                    <span class="more text-muted pull-right">
+                        <?=$item->key?>
+                    </span>
+                    <h3 class="title">
+                        <?=$item->name?>
+                    </h3>
+                </div>
             </div>
-        </div>
 
-        <div class="stui-pannel_bd col-pd clearfix">
-            <ul class="stui-content__playlist clearfix">
-                <li>
-                    <a title="34" href="/play/32741-0-0.html" target="_self">
-                        34
-                    </a>
-                </li>
-                <li>
-                    <a title="33" href="/play/32741-0-1.html" target="_self">
-                        33
-                    </a>
-                </li>
-                <li>
-                    <a title="32" href="/play/32741-0-2.html" target="_self">
-                        32
-                    </a>
-                </li>
-                <li>
-                    <a title="31" href="/play/32741-0-3.html" target="_self">
-                        31
-                    </a>
-                </li>
-                <li>
-                    <a title="30" href="/play/32741-0-4.html" target="_self">
-                        30
-                    </a>
-                </li>
-                <li>
-                    <a title="29" href="/play/32741-0-5.html" target="_self">
-                        29
-                    </a>
-                </li>
-                <li>
-                    <a title="28" href="/play/32741-0-6.html" target="_self">
-                        28
-                    </a>
-                </li>
-                <li>
-                    <a title="27" href="/play/32741-0-7.html" target="_self">
-                        27
-                    </a>
-                </li>
-                <li>
-                    <a title="26" href="/play/32741-0-8.html" target="_self">
-                        26
-                    </a>
-                </li>
-                <li>
-                    <a title="25" href="/play/32741-0-9.html" target="_self">
-                        25
-                    </a>
-                </li>
-                <li>
-                    <a title="24" href="/play/32741-0-10.html" target="_self">
-                        24
-                    </a>
-                </li>
-                <li>
-                    <a title="23" href="/play/32741-0-11.html" target="_self">
-                        23
-                    </a>
-                </li>
-                <li>
-                    <a title="22" href="/play/32741-0-12.html" target="_self">
-                        22
-                    </a>
-                </li>
-                <li>
-                    <a title="21" href="/play/32741-0-13.html" target="_self">
-                        21
-                    </a>
-                </li>
-                <li>
-                    <a title="20" href="/play/32741-0-14.html" target="_self">
-                        20
-                    </a>
-                </li>
-                <li>
-                    <a title="19" href="/play/32741-0-15.html" target="_self">
-                        19
-                    </a>
-                </li>
-                <li>
-                    <a title="18" href="/play/32741-0-16.html" target="_self">
-                        18
-                    </a>
-                </li>
-                <li>
-                    <a title="17" href="/play/32741-0-17.html" target="_self">
-                        17
-                    </a>
-                </li>
-                <li>
-                    <a title="16" href="/play/32741-0-18.html" target="_self">
-                        16
-                    </a>
-                </li>
-                <li>
-                    <a title="15" href="/play/32741-0-19.html" target="_self">
-                        15
-                    </a>
-                </li>
-                <li>
-                    <a title="14" href="/play/32741-0-20.html" target="_self">
-                        14
-                    </a>
-                </li>
-                <li>
-                    <a title="13" href="/play/32741-0-21.html" target="_self">
-                        13
-                    </a>
-                </li>
-                <li>
-                    <a title="12" href="/play/32741-0-22.html" target="_self">
-                        12
-                    </a>
-                </li>
-                <li>
-                    <a title="11" href="/play/32741-0-23.html" target="_self">
-                        11
-                    </a>
-                </li>
-                <li>
-                    <a title="10" href="/play/32741-0-24.html" target="_self">
-                        10
-                    </a>
-                </li>
-                <li>
-                    <a title="09" href="/play/32741-0-25.html" target="_self">
-                        09
-                    </a>
-                </li>
-                <li>
-                    <a title="08" href="/play/32741-0-26.html" target="_self">
-                        08
-                    </a>
-                </li>
-                <li>
-                    <a title="07" href="/play/32741-0-27.html" target="_self">
-                        07
-                    </a>
-                </li>
-                <li>
-                    <a title="06" href="/play/32741-0-28.html" target="_self">
-                        06
-                    </a>
-                </li>
-                <li>
-                    <a title="05" href="/play/32741-0-29.html" target="_self">
-                        05
-                    </a>
-                </li>
-                <li>
-                    <a title="04" href="/play/32741-0-30.html" target="_self">
-                        04
-                    </a>
-                </li>
-                <li>
-                    <a title="03" href="/play/32741-0-31.html" target="_self">
-                        03
-                    </a>
-                </li>
-                <li>
-                    <a title="02" href="/play/32741-0-32.html" target="_self">
-                        02
-                    </a>
-                </li>
-                <li>
-                    <a title="01" href="/play/32741-0-33.html" target="_self">
-                        01
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!--通道1-->
-<!--通道2-->
-<div class="stui-pannel stui-pannel-bg clearfix">
-    <div class="stui-pannel-box">
-        <div class="stui-pannel_hd">
-            <div class="stui-pannel__head bottom-line active clearfix">
-								<span class="more text-muted pull-right">
-									推荐极速线路播放，支持手机看片
-								</span>
-                <h3 class="title">
-                    奇艺视频
-                </h3>
+            <div class="stui-pannel_bd col-pd clearfix">
+                <ul class="stui-content__playlist clearfix">
+                    <?php
+                    if (!empty($details)){ foreach ($details as $item1){
+                        if ($item1->type==$item->id){?>
+                    <li>
+                        <a title="<?=$item1->key?>" href="/site/play-<?=$item1->id?>.html" target="_self"><?=$item1->key?></a>
+                    </li>
+                    <?php } } }?>
+                </ul>
             </div>
         </div>
-        <div class="stui-pannel_bd col-pd clearfix">
-            <ul class="stui-content__playlist clearfix">
-                <li>
-                    <a title="BD高清" href="/play/16333-0-0.html" target="_self">
-                        BD高清
-                    </a>
-                </li>
-            </ul>
-        </div>
     </div>
-</div>
-<!--通道2-->
+<?php } }?>
+
 <!--猜你喜欢-->
 <div class="stui-pannel stui-pannel-bg clearfix">
     <div class="stui-pannel-box">
@@ -310,13 +124,13 @@ echo $this->title;
                         foreach ($datas as $item){?>
                     <li class="col-md-6 col-sm-4 col-xs-3">
                         <div class="stui-vodlist__box">
-                            <a class="stui-vodlist__thumb lazyload" target="_blank" href="/film/index32195.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;https://wx2.sinaimg.cn/mw690/0077WiZbgy1fu58f2bfhcj307i0b9aao.jpg&quot;);">
+                            <a class="stui-vodlist__thumb lazyload" target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;<?=$item->cover?>&quot;);">
                                 <span class="play hidden-xs"></span>
-                                <span class="pic-text text-right">BD1280高清国语无字</span>
+                                <span class="pic-text text-right"><?=$item->tip?></span>
                             </a>
                             <div class="stui-vodlist__detail padding-0">
                                 <h4 class="title text-overflow">
-                                    <a target="_blank" href="/film/index32195.html" title="<?=$item->name?>">
+                                    <a target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>">
                                         <?=$item->name?>
                                     </a>
                                 </h4>
