@@ -79,12 +79,12 @@ class SiteController extends Controller
     private function layoutData($isLink=true){
         $config = TConfig::findOne(['id'=>1]);
         Yii::$app->view->params['config'] = $config;
+        $link = TLink::find()->where(['fid'=>1])->orderBy(" sort_id asc")->all();
+        Yii::$app->view->params['link'] = $link;
         if ($isLink){
-            $link = TLink::find()->where(['fid'=>1])->orderBy(" sort_id asc")->all();
-            Yii::$app->view->params['link'] = $link;
+            $type = TType::find()->where(['type'=>2])->orderBy(" fid,sort_id asc")->all();
+            Yii::$app->view->params['type'] = $type;
         }
-        $type = TType::find()->where(['type'=>2])->orderBy(" fid,sort_id asc")->all();
-        Yii::$app->view->params['type'] = $type;
     }
 
     /**
@@ -131,7 +131,7 @@ class SiteController extends Controller
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 2,'pageSizeParam'=>false]);
         $datas = $query->offset($pages->offset)->orderBy(['id' => SORT_DESC])->limit($pages->limit)->all();
-        return $this->render('list',['type'=>$type,'curType'=>$curType,'datas'=>$datas,'page' => $pages,'sid'=>$sid]);
+        return $this->render('list',['type'=>$type,'curType'=>$curType,'datas'=>$datas,'page' => $pages,'id'=>$id,'sid'=>$sid]);
     }
 
     /**

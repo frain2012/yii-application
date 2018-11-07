@@ -13,16 +13,8 @@ $this->title="category";
                 <h3 class="title">
                     <img src="/images/icon_25.png"><?=$curType->name?>
                 </h3>
-                <ul class="nav nav-page pull-right">
-                    <li>
-                        <a href="/Column/index12-0.html"><i class="icon iconfont icon-back"></i></a>
-                    </li>
-                    <li>
-                        <a href="/Column/index12-2.html"><i class="icon iconfont icon-more"></i></a>
-                    </li>
-                </ul>
                 <span class="more text-muted pull-right hidden-xs">
-									共有“<?=$page->totalCount?>”部影片
+                    共有“<?=$page->totalCount?>”部影片
                 </span>
             </div>
             <ul class="stui-screen__list type-slide bottom-line-dot clearfix">
@@ -33,7 +25,7 @@ $this->title="category";
                 if(!empty($type)){
                     foreach ($type as $item){?>
                         <li <?php if ($sid==$item->id){ echo "class=\"active\"";} ?>>
-                            <a href="list/<?=$item->id?>.html"><?=$item->name?></a>
+                            <a href="list-<?=$id?>-<?=$item->id?>.html"><?=$item->name?></a>
                         </li>
                     <?php } }?>
             </ul>
