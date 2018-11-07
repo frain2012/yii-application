@@ -9,10 +9,11 @@ use Yii;
  *
  * @property string $id
  * @property string $fid film中的id
- * @property string $type
- * @property string $key
- * @property string $value
+ * @property int $type 渠道
+ * @property string $key 值
+ * @property string $value url
  * @property string $create_at
+ * @property int $sort_id
  */
 class TFilmDetail extends \yii\db\ActiveRecord
 {
@@ -30,9 +31,9 @@ class TFilmDetail extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['fid'], 'integer'],
+            [['fid', 'type', 'sort_id'], 'integer'],
             [['create_at'], 'safe'],
-            [['type', 'key'], 'string', 'max' => 32],
+            [['key'], 'string', 'max' => 32],
             [['value'], 'string', 'max' => 255],
         ];
     }
@@ -49,6 +50,7 @@ class TFilmDetail extends \yii\db\ActiveRecord
             'key' => 'Key',
             'value' => 'Value',
             'create_at' => 'Create At',
+            'sort_id' => 'Sort ID',
         ];
     }
 }

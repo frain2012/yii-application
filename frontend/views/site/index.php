@@ -48,9 +48,10 @@ $this->title="1";
                     <?php foreach ($movie as $item){?>
                         <li class="col-md-5 col-sm-4 col-xs-3">
                             <div class="stui-vodlist__box">
-                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/film/index29269.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fsczxj3hg8j307i0ahwf4.jpg&quot;);"><span class="play hidden-xs"></span><span class="pic-text text-right">BD1280国语中字</span></a>
+                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;<?=$item->cover?>&quot;);">
+                                    <span class="play hidden-xs"></span><span class="pic-text text-right">BD1280国语中字</span></a>
                                 <div class="stui-vodlist__detail">
-                                    <h4 class="title text-overflow"><a target="_blank" href="/film/index29269.html" title="<?=$item->name?>"><?=$item->name?></a></h4>
+                                    <h4 class="title text-overflow"><a target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>"><?=$item->name?></a></h4>
                                     <p class="text text-overflow text-muted hidden-xs"><?=$item->staring?> </p>
                                 </div>
                             </div></li>
@@ -121,9 +122,9 @@ $this->title="1";
                     <?php foreach ($tv as $item){?>
                         <li class="col-md-5 col-sm-4 col-xs-3">
                             <div class="stui-vodlist__box">
-                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/film/index33867.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fvo71i5owyj30u0160zw0.jpg&quot;);"><span class="play hidden-xs"></span><span class="pic-text text-right">更新至38集/共52集</span></a>
+                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;<?=$item->cover?>&quot;);"><span class="play hidden-xs"></span><span class="pic-text text-right">更新至38集/共52集</span></a>
                                 <div class="stui-vodlist__detail">
-                                    <h4 class="title text-overflow"><a target="_blank" href="/film/index33867.html" title="<?=$item->name?>"><?=$item->name?></a></h4>
+                                    <h4 class="title text-overflow"><a target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>"><?=$item->name?></a></h4>
                                     <p class="text text-overflow text-muted hidden-xs"><?=$item->staring?></p>
                                 </div>
                             </div></li>
@@ -187,9 +188,10 @@ $this->title="1";
                     <?php foreach ($comic as $item){?>
                         <li class="col-md-5 col-sm-4 col-xs-3">
                             <div class="stui-vodlist__box">
-                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/film/index34010.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fvpfwhxhf5j307i0b9dg8.jpg&quot;);"><span class="play hidden-xs"></span><span class="pic-text text-right">更新至11集/共40集</span></a>
+                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;<?=$item->cover?>&quot;);">
+                                    <span class="play hidden-xs"></span><span class="pic-text text-right">更新至11集/共40集</span></a>
                                 <div class="stui-vodlist__detail">
-                                    <h4 class="title text-overflow"><a target="_blank" href="/film/index34010.html" title="<?=$item->name?>"><?=$item->name?></a></h4>
+                                    <h4 class="title text-overflow"><a target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>"><?=$item->name?></a></h4>
                                     <p class="text text-overflow text-muted hidden-xs"><?=$item->staring?></p>
                                 </div>
                             </div></li>
@@ -253,9 +255,10 @@ $this->title="1";
                     <?php foreach ($variety as $item){?>
                         <li class="col-md-5 col-sm-4 col-xs-3">
                             <div class="stui-vodlist__box">
-                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/film/index34192.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fvsi8f4fzzj307i0av0t0.jpg&quot;);"><span class="play hidden-xs"></span><span class="pic-text text-right">20181021</span></a>
+                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;<?=$item->cover?>&quot;);">
+                                    <span class="play hidden-xs"></span><span class="pic-text text-right">20181021</span></a>
                                 <div class="stui-vodlist__detail">
-                                    <h4 class="title text-overflow"><a target="_blank" href="/film/index34192.html" title="<?=$item->name?>"><?=$item->name?></a></h4>
+                                    <h4 class="title text-overflow"><a target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>"><?=$item->name?></a></h4>
                                     <p class="text text-overflow text-muted hidden-xs"><?=$item->staring?></p>
                                 </div>
                             </div></li>

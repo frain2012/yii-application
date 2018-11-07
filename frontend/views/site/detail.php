@@ -11,7 +11,7 @@ echo $this->title;
             <div class="col-md-wide-75 col-xs-1">
                 <div class="stui-content clearfix">
                     <div class="stui-content__thumb">
-                        <a class="stui-vodlist__thumb v-thumb lazyload" target="_blank" href="/play/16333-0-0.html" title="<?=$film->name?>" data-original="<?=$film->cover?>" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fpy3we98xnj305006k0t1.jpg&quot;);">
+                        <a class="stui-vodlist__thumb v-thumb lazyload" target="_blank" href="/site/play-<?=$film->id?>.html" title="<?=$film->name?>" data-original="<?=$film->cover?>" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fpy3we98xnj305006k0t1.jpg&quot;);">
 											<span class="play active hidden-xs"></span>
                         </a>
                     </div>
@@ -23,67 +23,21 @@ echo $this->title;
                             <span class="text-muted">
                                 主演：
                             </span>
-                            <a href="/zhuyan/%E8%B4%BE%E6%96%AF%E6%B1%80%C2%B7%E5%BC%97%E8%8E%B1%E5%BD%BB">
-                                贾斯汀·弗莱彻
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E7%BA%A6%E7%BF%B0%C2%B7%E6%96%AF%E5%B8%95%E5%85%8B%E6%96%AF">
-                                约翰·斯帕克斯
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E6%AC%A7%E7%B1%B3%E5%BE%B7%C2%B7%E5%90%89%E4%BA%9A%E6%9D%8E%E5%88%A9">
-                                欧米德·吉亚李利
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E9%9F%A6%E4%BC%AF">
-                                理查德·韦伯
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/Kate">
-                                Kate
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/Harbour">
-                                Harbour
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
+                            <?=$film->staring?>
                             &nbsp;&nbsp;
                         </p>
                         <p class="data">
-                            <span class="text-muted">
-                                导演：
-                            </span>
-                            <a href="/zhuyan/%E9%A9%AC%E5%85%8B%C2%B7%E4%BC%AF%E9%A1%BF">
-                                马克·伯顿
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E6%96%AF%E5%A1%94%E6%89%8E%E5%85%8B">
-                                理查德·斯塔扎克
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
+                            <span class="text-muted">导演：</span>
+                            <?=$film->director?>
                             &nbsp;&nbsp;
                         </p>
                         <p class="data">
-                            <span class="text-muted">
-                                类型：
-                            </span>
-                            <a href="/Column/index12.html">
-                                动画片
-                            </a>
+                            <span class="text-muted">类型：</span>动画片
                             <span class="split-line"></span>
-                            <span class="text-muted hidden-xs">
-                                地区：
-                            </span>
-                            <a href="/search.php?searchtype=5&amp;tid=12&amp;area="></a>
+                            <span class="text-muted hidden-xs">地区：</span>欧美
                             <span class="split-line"></span>
-                            <span class="text-muted hidden-xs">
-                                年份：
-                            </span>
-                            <a href="/search.php?searchtype=5&amp;tid=12&amp;year=20150717">20150717</a>
+                            <span class="text-muted hidden-xs">年份：</span>
+                            20150717
                         </p>
                         <p class="desc detail hidden-xs">
                             <span class="left text-muted">简介：</span>
@@ -101,7 +55,7 @@ echo $this->title;
                         <div class="play-btn clearfix">
                             <div class="share bdsharebuttonbox hidden-sm hidden-xs pull-right">
                             </div>
-                            <a class="btn btn-primary" target="_blank" href="/play/16333-0-0.html">
+                            <a class="btn btn-primary" target="_blank" href="/site/play-<?=$film->id?>-0-1.html">
                                 立即播放
                             </a>
                         </div>

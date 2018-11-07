@@ -32,8 +32,8 @@ $this->title="category";
                 <?php
                 if(!empty($type)){
                     foreach ($type as $item){?>
-                        <li class="active">
-                            <a href="list/<?=$item->id?>"><?=$item->name?></a>
+                        <li <?php if ($sid==$item->id){ echo "class=\"active\"";} ?>>
+                            <a href="list/<?=$item->id?>.html"><?=$item->name?></a>
                         </li>
                     <?php } }?>
             </ul>
@@ -160,13 +160,12 @@ $this->title="category";
                     foreach ($datas as $item){?>
                         <li class="col-md-6 col-sm-4 col-xs-3">
                             <div class="stui-vodlist__box">
-                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/film/index34432.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fvwnio60euj307i0acjrq.jpg&quot;);">
-											<span class="play hidden-xs"></span>
-                                    <span class="pic-text text-right">BD高清</span>
+                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;<?=$item->cover?>&quot;);">
+                                    <span class="play hidden-xs"></span><span class="pic-text text-right">BD高清</span>
                                 </a>
                                 <div class="stui-vodlist__detail">
                                     <h4 class="title text-overflow">
-                                        <a target="_blank" href="/film/index34432.html" title="<?=$item->cover?>"><?=$item->name?></a>
+                                        <a target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->cover?>"><?=$item->name?></a>
                                     </h4>
                                     <p class="text text-overflow text-muted hidden-xs">
                                         <?=$item->staring?>

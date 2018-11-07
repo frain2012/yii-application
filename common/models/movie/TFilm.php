@@ -17,6 +17,8 @@ use Yii;
  * @property string $area
  * @property int $year 年份
  * @property string $introduce 简介
+ * @property string $tip
+ * @property string $quality
  * @property string $create_at
  */
 class TFilm extends \yii\db\ActiveRecord
@@ -37,8 +39,8 @@ class TFilm extends \yii\db\ActiveRecord
         return [
             [['type', 'year'], 'integer'],
             [['create_at'], 'safe'],
-            [['name', 'cover', 'staring', 'director', 'introduce'], 'string', 'max' => 255],
-            [['sub_type'], 'string', 'max' => 32],
+            [['name', 'cover', 'staring', 'director', 'introduce', 'tip'], 'string', 'max' => 255],
+            [['sub_type', 'quality'], 'string', 'max' => 32],
             [['area'], 'string', 'max' => 16],
         ];
     }
@@ -59,6 +61,8 @@ class TFilm extends \yii\db\ActiveRecord
             'area' => 'Area',
             'year' => 'Year',
             'introduce' => 'Introduce',
+            'tip' => 'Tip',
+            'quality' => 'Quality',
             'create_at' => 'Create At',
         ];
     }

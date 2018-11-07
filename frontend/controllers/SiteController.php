@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use common\models\movie\TConfig;
 use common\models\movie\TFilm;
+use common\models\movie\TFilmDetail;
 use common\models\movie\TLink;
 use common\models\movie\TType;
 use Yii;
@@ -109,6 +110,7 @@ class SiteController extends Controller
      * 列表页面
      */
     public function actionList(){
+        $this->layout="list";
         //父类型
         $id = Yii::$app->request->get("id",0);
         if (empty($id)){
@@ -117,20 +119,18 @@ class SiteController extends Controller
         $curType = TType::findOne(['id'=>$id]);
         //子类型
         $sid = Yii::$app->request->get("sid",0);
-        if (!empty($sid)){
-
-        }
-
-
-        $this->layoutData(false);
-        $this->layout="list";
-        $type = TType::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
         //查询
-        $query = TFilm::find()->where(['type'=>$type]);
+        $query = TFilm::find()->where(['type'=>$id]);
+        if (!empty($sid)){
+            $query->andWhere(['sub_type'=>$sid]);
+        }
+        $this->layoutData(false);
+        //类型列表
+        $type = TType::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 10]);
         $datas = $query->offset($pages->offset)->orderBy(['id' => SORT_DESC])->limit($pages->limit)->all();
-        return $this->render('list',['type'=>$type,'curType'=>$curType,'datas'=>$datas,'page' => $pages]);
+        return $this->render('list',['type'=>$type,'curType'=>$curType,'datas'=>$datas,'page' => $pages,'sid'=>$sid]);
     }
 
     /**
@@ -142,9 +142,13 @@ class SiteController extends Controller
         $film = TFilm::findOne(['id'=>$id]);
         $this->layout="detail";
         $this->layoutData(false);
+        //渠道列表
+        $channel = TFilm::findBySql("SELECT ta.type,tc.`key`,tc.`name` FROM (SELECT DISTINCT(type) as type FROM t_film_detail WHERE fid=".$id.") ta LEFT JOIN t_channel tc ON tc.id=ta.type")->all();
+        //详细列表
+        $details = TFilmDetail::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
         //猜你喜欢
         $datas = TFilm::findBySql("SELECT * FROM t_film  WHERE id!=$id  and id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_film))) ORDER BY id LIMIT 0,10")->all();
-        return $this->render('detail',['film'=>$film,'datas'=>$datas]);
+        return $this->render('detail',['film'=>$film,'datas'=>$datas,'channel'=>$channel,'details'=>$details]);
     }
 
     /**
@@ -152,13 +156,18 @@ class SiteController extends Controller
      */
     public function actionPlay(){
         $id = Yii::$app->request->get("id",0);
+        echo $id;
         $this->layout="play";
         $this->layoutData(false);
         $film = TFilm::findOne(['id'=>$id]);
+        //渠道列表
+        $channel = TFilm::findBySql("SELECT ta.type,tc.`key`,tc.`name` FROM (SELECT DISTINCT(type) as type FROM t_film_detail WHERE fid=".$id.") ta LEFT JOIN t_channel tc ON tc.id=ta.type")->all();
+        var_dump($channel);
+        //详细列表
+        $details = TFilmDetail::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
         //猜你喜欢
         $datas = TFilm::findBySql("SELECT * FROM t_film  WHERE id!=$id  and id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_film))) ORDER BY id LIMIT 0,10")->all();
-        return $this->render('play',['film'=>$film,'datas'=>$datas]);
-
+        return $this->render('play',['film'=>$film,'datas'=>$datas,'channel'=>$channel,'details'=>$details]);
     }
 
 
