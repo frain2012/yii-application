@@ -1,10 +1,6 @@
 <?php
 
-/* @var $this yii\web\View */
-use yii\widgets\LinkPager;
-
 $this->title=$film->name;
-echo $this->title;
 ?>
 <!--详情-->
 <div class="stui-pannel stui-pannel-bg clearfix">
@@ -45,143 +41,24 @@ echo $this->title;
                         <a href="/Column/index13.html">
                             国产剧 国产剧
                         </a>
-                        <span class="split-line">
-										</span>
-                        <span class="text-muted hidden-xs">
-											地区：
-										</span>
-                        <a href="/search.php?searchtype=5&amp;tid=13&amp;area=大陆">
-                            大陆
-                        </a>
-                        <span class="split-line">
-										</span>
-                        <span class="text-muted hidden-xs">
-											年份：
-										</span>
-                        <a href="/search.php?searchtype=5&amp;tid=13&amp;year=2018">
-                            2018
-                        </a>
-                        <span class="split-line">
-										</span>
+                        <span class="split-line"></span>
+                        <span class="text-muted hidden-xs">地区：</span>
+                        大陆
+                        <span class="split-line"></span>
+                        <span class="text-muted hidden-xs">年份：</span>
+                        <?=$film->area?>
+                        <span class="split-line"></span>
                         <a class="detail-more" href="javascript:;">详情 <i class="icon iconfont icon-moreunfold"></i></a>
                     </p>
                     <div class="detail-content" style="display: none;">
                         <p class="data">
-											<span class="text-muted">
-												主演：
-											</span>
-                            <a href="/zhuyan/%E5%90%B4%E7%A3%8A">
-                                吴磊
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E6%9E%97%E5%85%81">
-                                林允
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E9%99%88%E6%A5%9A%E6%B2%B3">
-                                陈楚河
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E6%9D%8E%E6%B2%81">
-                                李沁
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E5%88%98%E7%BE%8E%E5%BD%A4">
-                                刘美彤
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E8%BE%9B%E8%8A%B7%E8%95%BE">
-                                辛芷蕾
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E8%82%96%E6%88%98">
-                                肖战
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E4%BC%8D%E5%98%89%E6%88%90">
-                                伍嘉成
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E8%B0%B7%E5%98%89%E8%AF%9A">
-                                谷嘉诚
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E5%BD%AD%E6%A5%9A%E7%B2%A4">
-                                彭楚粤
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/">
-                            </a>
-                            &nbsp;&nbsp;
-                            <a href="/zhuyan/%E9%99%88%E6%B3%BD%E5%B8%8C..">
-                                陈泽希..
-                            </a>
+                            <span class="text-muted">主演：</span>
+                            <?=$film->staring?>
                             &nbsp;&nbsp;
                         </p>
                         <p class="data">
-											<span class="text-muted">
-												导演：
-											</span>
-                            <a href="/zhuyan/%E4%BA%8E%E8%8D%A3%E5%85%89">
-                                于荣光
-                            </a>
+                            <span class="text-muted">导演：</span>
+                            <?=$film->director?>
                             &nbsp;&nbsp;
                         </p>
                         <p class="desc margin-0">
@@ -195,416 +72,37 @@ echo $this->title;
     </div>
 </div>
 <!--详情-->
-<!--通道1-->
-<div class="stui-pannel stui-pannel-bg clearfix">
-    <div class="stui-pannel-box">
-        <div class="stui-pannel_hd">
-            <div class="stui-pannel__head bottom-line active clearfix">
-								<span class="more text-muted pull-right">
-									无法播放请切换到云播播放
-								</span>
-                <h3 class="title">
-                    极速
-                </h3>
+
+<?php if (!empty($channel)){ foreach ($channel as $item){ ?>
+    <!--通道-->
+    <div class="stui-pannel stui-pannel-bg clearfix">
+        <div class="stui-pannel-box">
+            <div class="stui-pannel_hd">
+                <div class="stui-pannel__head bottom-line active clearfix">
+                    <span class="more text-muted pull-right">
+                        <?=$item->key?>
+                    </span>
+                    <h3 class="title">
+                        <?=$item->name?>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="stui-pannel_bd col-pd clearfix">
+                <ul class="stui-content__playlist clearfix">
+                    <?php
+                    if (!empty($details)){ foreach ($details as $item1){
+                        if ($item1->type==$item->id){?>
+                            <li <?php if ($id==$item1->id){ echo "class=\"active\"";}?>>
+                                <a title="<?=$item1->key?>" href="/site/play-<?=$item1->fid?>-<?=$item1->id?>.html" target="_self"><?=$item1->key?></a>
+                            </li>
+                        <?php } } }?>
+                </ul>
             </div>
         </div>
-        <div class="stui-pannel_bd col-pd clearfix">
-            <ul class="stui-content__playlist clearfix">
-                <li>
-                    <a title="第1集" href="/play/32741-1-0.html" style="color:red" target="_self">
-                        第1集
-                    </a>
-                </li>
-                <li>
-                    <a title="第2集" href="/play/32741-1-1.html" target="_self">
-                        第2集
-                    </a>
-                </li>
-                <li>
-                    <a title="第3集" href="/play/32741-1-2.html" target="_self">
-                        第3集
-                    </a>
-                </li>
-                <li>
-                    <a title="第4集" href="/play/32741-1-3.html" target="_self">
-                        第4集
-                    </a>
-                </li>
-                <li>
-                    <a title="第5集" href="/play/32741-1-4.html" target="_self">
-                        第5集
-                    </a>
-                </li>
-                <li>
-                    <a title="第6集" href="/play/32741-1-5.html" target="_self">
-                        第6集
-                    </a>
-                </li>
-                <li>
-                    <a title="第7集" href="/play/32741-1-6.html" target="_self">
-                        第7集
-                    </a>
-                </li>
-                <li>
-                    <a title="第8集" href="/play/32741-1-7.html" target="_self">
-                        第8集
-                    </a>
-                </li>
-                <li>
-                    <a title="第9集" href="/play/32741-1-8.html" target="_self">
-                        第9集
-                    </a>
-                </li>
-                <li>
-                    <a title="第10集" href="/play/32741-1-9.html" target="_self">
-                        第10集
-                    </a>
-                </li>
-                <li>
-                    <a title="第11集" href="/play/32741-1-10.html" target="_self">
-                        第11集
-                    </a>
-                </li>
-                <li>
-                    <a title="第12集" href="/play/32741-1-11.html" target="_self">
-                        第12集
-                    </a>
-                </li>
-                <li>
-                    <a title="第13集" href="/play/32741-1-12.html" target="_self">
-                        第13集
-                    </a>
-                </li>
-                <li>
-                    <a title="第14集" href="/play/32741-1-13.html" target="_self">
-                        第14集
-                    </a>
-                </li>
-                <li>
-                    <a title="第15集" href="/play/32741-1-14.html" target="_self">
-                        第15集
-                    </a>
-                </li>
-                <li>
-                    <a title="第16集" href="/play/32741-1-15.html" target="_self">
-                        第16集
-                    </a>
-                </li>
-                <li>
-                    <a title="第17集" href="/play/32741-1-16.html" target="_self">
-                        第17集
-                    </a>
-                </li>
-                <li>
-                    <a title="第18集" href="/play/32741-1-17.html" target="_self">
-                        第18集
-                    </a>
-                </li>
-                <li>
-                    <a title="第19集" href="/play/32741-1-18.html" target="_self">
-                        第19集
-                    </a>
-                </li>
-                <li>
-                    <a title="第20集" href="/play/32741-1-19.html" target="_self">
-                        第20集
-                    </a>
-                </li>
-                <li>
-                    <a title="第21集" href="/play/32741-1-20.html" target="_self">
-                        第21集
-                    </a>
-                </li>
-                <li>
-                    <a title="第22集" href="/play/32741-1-21.html" target="_self">
-                        第22集
-                    </a>
-                </li>
-                <li>
-                    <a title="第23集" href="/play/32741-1-22.html" target="_self">
-                        第23集
-                    </a>
-                </li>
-                <li>
-                    <a title="第24集" href="/play/32741-1-23.html" target="_self">
-                        第24集
-                    </a>
-                </li>
-                <li>
-                    <a title="第25集" href="/play/32741-1-24.html" target="_self">
-                        第25集
-                    </a>
-                </li>
-                <li>
-                    <a title="第26集" href="/play/32741-1-25.html" target="_self">
-                        第26集
-                    </a>
-                </li>
-                <li>
-                    <a title="第27集" href="/play/32741-1-26.html" target="_self">
-                        第27集
-                    </a>
-                </li>
-                <li>
-                    <a title="第28集" href="/play/32741-1-27.html" target="_self">
-                        第28集
-                    </a>
-                </li>
-                <li>
-                    <a title="第29集" href="/play/32741-1-28.html" target="_self">
-                        第29集
-                    </a>
-                </li>
-                <li>
-                    <a title="第30集" href="/play/32741-1-29.html" target="_self">
-                        第30集
-                    </a>
-                </li>
-                <li>
-                    <a title="第31集" href="/play/32741-1-30.html" target="_self">
-                        第31集
-                    </a>
-                </li>
-                <li>
-                    <a title="第32集" href="/play/32741-1-31.html" target="_self">
-                        第32集
-                    </a>
-                </li>
-                <li>
-                    <a title="第33集" href="/play/32741-1-32.html" target="_self">
-                        第33集
-                    </a>
-                </li>
-                <li>
-                    <a title="第34集" href="/play/32741-1-33.html" target="_self">
-                        第34集
-                    </a>
-                </li>
-                <li>
-                    <a title="第35集" href="/play/32741-1-34.html" target="_self">
-                        第35集
-                    </a>
-                </li>
-                <li>
-                    <a title="第36集" href="/play/32741-1-35.html" target="_self">
-                        第36集
-                    </a>
-                </li>
-                <li>
-                    <a title="第37集" href="/play/32741-1-36.html" target="_self">
-                        第37集
-                    </a>
-                </li>
-                <li>
-                    <a title="第38集" href="/play/32741-1-37.html" target="_self">
-                        第38集
-                    </a>
-                </li>
-                <li>
-                    <a title="第39集" href="/play/32741-1-38.html" target="_self">
-                        第39集
-                    </a>
-                </li>
-                <li>
-                    <a title="第40集" href="/play/32741-1-39.html" target="_self">
-                        第40集
-                    </a>
-                </li>
-            </ul>
-        </div>
     </div>
-</div>
-<!--通道1-->
-<!--通道2-->
-<div class="stui-pannel stui-pannel-bg clearfix">
-    <div class="stui-pannel-box">
-        <div class="stui-pannel_hd">
-            <div class="stui-pannel__head bottom-line active clearfix">
-								<span class="more text-muted pull-right">
-									推荐极速线路播放，支持手机看片
-								</span>
-                <h3 class="title">
-                    云播
-                </h3>
-            </div>
-        </div>
-        <div class="stui-pannel_bd col-pd clearfix">
-            <ul class="stui-content__playlist clearfix">
-                <li>
-                    <a title="34" href="/play/32741-0-0.html" target="_self">
-                        34
-                    </a>
-                </li>
-                <li>
-                    <a title="33" href="/play/32741-0-1.html" target="_self">
-                        33
-                    </a>
-                </li>
-                <li>
-                    <a title="32" href="/play/32741-0-2.html" target="_self">
-                        32
-                    </a>
-                </li>
-                <li>
-                    <a title="31" href="/play/32741-0-3.html" target="_self">
-                        31
-                    </a>
-                </li>
-                <li>
-                    <a title="30" href="/play/32741-0-4.html" target="_self">
-                        30
-                    </a>
-                </li>
-                <li>
-                    <a title="29" href="/play/32741-0-5.html" target="_self">
-                        29
-                    </a>
-                </li>
-                <li>
-                    <a title="28" href="/play/32741-0-6.html" target="_self">
-                        28
-                    </a>
-                </li>
-                <li>
-                    <a title="27" href="/play/32741-0-7.html" target="_self">
-                        27
-                    </a>
-                </li>
-                <li>
-                    <a title="26" href="/play/32741-0-8.html" target="_self">
-                        26
-                    </a>
-                </li>
-                <li>
-                    <a title="25" href="/play/32741-0-9.html" target="_self">
-                        25
-                    </a>
-                </li>
-                <li>
-                    <a title="24" href="/play/32741-0-10.html" target="_self">
-                        24
-                    </a>
-                </li>
-                <li>
-                    <a title="23" href="/play/32741-0-11.html" target="_self">
-                        23
-                    </a>
-                </li>
-                <li>
-                    <a title="22" href="/play/32741-0-12.html" target="_self">
-                        22
-                    </a>
-                </li>
-                <li>
-                    <a title="21" href="/play/32741-0-13.html" target="_self">
-                        21
-                    </a>
-                </li>
-                <li>
-                    <a title="20" href="/play/32741-0-14.html" target="_self">
-                        20
-                    </a>
-                </li>
-                <li>
-                    <a title="19" href="/play/32741-0-15.html" target="_self">
-                        19
-                    </a>
-                </li>
-                <li>
-                    <a title="18" href="/play/32741-0-16.html" target="_self">
-                        18
-                    </a>
-                </li>
-                <li>
-                    <a title="17" href="/play/32741-0-17.html" target="_self">
-                        17
-                    </a>
-                </li>
-                <li>
-                    <a title="16" href="/play/32741-0-18.html" target="_self">
-                        16
-                    </a>
-                </li>
-                <li>
-                    <a title="15" href="/play/32741-0-19.html" target="_self">
-                        15
-                    </a>
-                </li>
-                <li>
-                    <a title="14" href="/play/32741-0-20.html" target="_self">
-                        14
-                    </a>
-                </li>
-                <li>
-                    <a title="13" href="/play/32741-0-21.html" target="_self">
-                        13
-                    </a>
-                </li>
-                <li>
-                    <a title="12" href="/play/32741-0-22.html" target="_self">
-                        12
-                    </a>
-                </li>
-                <li>
-                    <a title="11" href="/play/32741-0-23.html" target="_self">
-                        11
-                    </a>
-                </li>
-                <li>
-                    <a title="10" href="/play/32741-0-24.html" target="_self">
-                        10
-                    </a>
-                </li>
-                <li>
-                    <a title="09" href="/play/32741-0-25.html" target="_self">
-                        09
-                    </a>
-                </li>
-                <li>
-                    <a title="08" href="/play/32741-0-26.html" target="_self">
-                        08
-                    </a>
-                </li>
-                <li>
-                    <a title="07" href="/play/32741-0-27.html" target="_self">
-                        07
-                    </a>
-                </li>
-                <li>
-                    <a title="06" href="/play/32741-0-28.html" target="_self">
-                        06
-                    </a>
-                </li>
-                <li>
-                    <a title="05" href="/play/32741-0-29.html" target="_self">
-                        05
-                    </a>
-                </li>
-                <li>
-                    <a title="04" href="/play/32741-0-30.html" target="_self">
-                        04
-                    </a>
-                </li>
-                <li>
-                    <a title="03" href="/play/32741-0-31.html" target="_self">
-                        03
-                    </a>
-                </li>
-                <li>
-                    <a title="02" href="/play/32741-0-32.html" target="_self">
-                        02
-                    </a>
-                </li>
-                <li>
-                    <a title="01" href="/play/32741-0-33.html" target="_self">
-                        01
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!--通道2-->
+<?php } }?>
+
 <!--猜你喜欢-->
 <div class="stui-pannel stui-pannel-bg clearfix">
     <div class="stui-pannel-box">
@@ -623,13 +121,13 @@ echo $this->title;
                     foreach ($datas as $item){?>
                         <li class="col-md-6 col-sm-4 col-xs-3">
                             <div class="stui-vodlist__box">
-                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/film/index32195.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;https://wx2.sinaimg.cn/mw690/0077WiZbgy1fu58f2bfhcj307i0b9aao.jpg&quot;);">
+                                <a class="stui-vodlist__thumb lazyload" target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;<?=$item->cover?>&quot;);">
                                     <span class="play hidden-xs"></span>
-                                    <span class="pic-text text-right">BD1280高清国语无字</span>
+                                    <span class="pic-text text-right"><?=$item->tip?></span>
                                 </a>
                                 <div class="stui-vodlist__detail padding-0">
                                     <h4 class="title text-overflow">
-                                        <a target="_blank" href="/film/index32195.html" title="<?=$item->name?>">
+                                        <a target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>">
                                             <?=$item->name?>
                                         </a>
                                     </h4>

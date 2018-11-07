@@ -156,19 +156,22 @@ class SiteController extends Controller
      * 播放页面
      */
     public function actionPlay(){
-        $id = Yii::$app->request->get("id",0);
-        echo $id;
+        $fid = Yii::$app->request->get("id",0);
+        $id = Yii::$app->request->get("sid",0);
+        $filmDetail = TFilmDetail::findOne(['id'=>$id,'fid'=>$fid]);
+        if (empty($filmDetail)){
+            return;
+        }
         $this->layout="play";
         $this->layoutData(false);
-        $film = TFilm::findOne(['id'=>$id]);
+        $film = TFilm::findOne(['id'=>$fid]);
         //渠道列表
-        $channel = TFilm::findBySql("SELECT ta.type,tc.`key`,tc.`name` FROM (SELECT DISTINCT(type) as type FROM t_film_detail WHERE fid=".$id.") ta LEFT JOIN t_channel tc ON tc.id=ta.type")->all();
-        var_dump($channel);
+        $channel = TChannel::findBySql("SELECT tc.* FROM (SELECT DISTINCT(type) as type FROM t_film_detail WHERE fid=$fid ) ta LEFT JOIN t_channel tc ON tc.id=ta.type")->all();
         //详细列表
-        $details = TFilmDetail::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
+        $details = TFilmDetail::find()->where(['fid'=>$fid])->orderBy("sort_id asc")->all();
         //猜你喜欢
-        $datas = TFilm::findBySql("SELECT * FROM t_film  WHERE id!=$id  and id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_film))) ORDER BY id LIMIT 0,10")->all();
-        return $this->render('play',['film'=>$film,'datas'=>$datas,'channel'=>$channel,'details'=>$details]);
+        $datas = TFilm::findBySql("SELECT * FROM t_film  WHERE id!=$fid  and id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_film))) ORDER BY id LIMIT 0,10")->all();
+        return $this->render('play',['film'=>$film,'datas'=>$datas,'channel'=>$channel,'details'=>$details,'id'=>$id]);
     }
 
 

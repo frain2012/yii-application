@@ -22,7 +22,7 @@ $this->title="category";
                     </li>
                 </ul>
                 <span class="more text-muted pull-right hidden-xs">
-									共有“338”部影片，当前第“1”页
+									共有“<?=$page->totalCount?>”部影片
                 </span>
             </div>
             <ul class="stui-screen__list type-slide bottom-line-dot clearfix">

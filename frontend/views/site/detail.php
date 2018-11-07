@@ -97,7 +97,7 @@ echo $this->title;
                     if (!empty($details)){ foreach ($details as $item1){
                         if ($item1->type==$item->id){?>
                     <li>
-                        <a title="<?=$item1->key?>" href="/site/play-<?=$item1->id?>.html" target="_self"><?=$item1->key?></a>
+                        <a title="<?=$item1->key?>" href="/site/play-<?=$item1->fid?>-<?=$item1->id?>.html" target="_self"><?=$item1->key?></a>
                     </li>
                     <?php } } }?>
                 </ul>
