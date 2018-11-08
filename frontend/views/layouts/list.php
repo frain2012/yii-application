@@ -18,7 +18,13 @@ AppAsset::register($this);
     <meta name="renderer" content="webkit|ie-comp|ie-stand" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode(strstr($this->params['config']->title,"#",$this->title)) ?></title>
+    <title>
+        <?php if (empty($this->title)){
+            echo Html::encode($this->params['config']->title);
+        }else{
+            echo Html::encode($this->title.'-'.$this->params['config']->title);
+        }?>
+    </title>
     <meta name="keywords" content="<?= Html::encode($this->params['config']->keywords) ?>" />
     <meta name="description" content="<?= Html::encode($this->params['config']->description) ?>" />
     <?php $this->head() ?>

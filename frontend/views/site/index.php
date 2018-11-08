@@ -2,7 +2,6 @@
 
 /* @var $this yii\web\View */
 
-$this->title="1";
 ?>
 <!--轮播-->
 <div class="stui-pannel stui-pannel-bg clearfix">

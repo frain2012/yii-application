@@ -2,7 +2,6 @@
 
 
 $this->title=$film->name;
-echo $this->title;
 ?>
 <!--详情-->
 <div class="stui-pannel stui-pannel-bg clearfix">

@@ -1,9 +1,8 @@
 <?php
 
-/* @var $this yii\web\View */
 use yii\widgets\LinkPager;
 
-$this->title="category";
+$this->title=$curType->name;
 ?>
 <!--类别-->
 <div class="stui-pannel stui-pannel-bg clearfix">
