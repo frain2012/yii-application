@@ -97,7 +97,11 @@ echo $this->title;
                     if (!empty($details)){ foreach ($details as $item1){
                         if ($item1->type==$item->id){?>
                     <li>
-                        <a title="<?=$item1->key?>" href="/site/play-<?=$item1->fid?>-<?=$item1->id?>.html" target="_self"><?=$item1->key?></a>
+                        <?php if ($item->id==1){?>
+                            <div class="a_copy"><?=$item1->value?></div>
+                        <?php }else{?>
+                            <a title="<?=$item1->key?>" href="/site/play-<?=$item1->fid?>-<?=$item1->id?>.html" target="_self"><?=$item1->key?></a>
+                        <?php }?>
                     </li>
                     <?php } } }?>
                 </ul>

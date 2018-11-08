@@ -179,3 +179,6 @@ body{padding-top:100px}
 .bdsharebuttonbox span.bds_shere{background-position:0 -606px}
 .bdsharebuttonbox a.bds_count{background:0 0;width:auto;height:auto;position:relative;top:-6px}
 .bdsharebuttonbox a.bds_count{margin:0 2px}
+
+/***add***/
+.a_copy{background-color: #d58512;color: #0f0f0f;padding: 5px 15px;margin-left:10px;border-radius:5px;}
