@@ -130,10 +130,10 @@ class SiteController extends Controller
         }
         $this->layoutData(false);
         //类型列表
-        $type = TType::find()->where(['fid'=>$id])->orderBy("id asc")->all();
+        $type = TType::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 12,'pageSizeParam'=>false]);
-        $datas = $query->offset($pages->offset)->orderBy(['id' => SORT_DESC])->limit($pages->limit)->all();
+        $datas = $query->offset($pages->offset)->orderBy(['id' => SORT_ASC])->limit($pages->limit)->all();
         return $this->render('list',['type'=>$type,'curType'=>$curType,'datas'=>$datas,'page' => $pages,'id'=>$id,'sid'=>$sid]);
     }
 
