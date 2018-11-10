@@ -19,9 +19,7 @@ $this->title=$film->name;
                             <?=$film->name?>
                         </h3>
                         <p class="data">
-                            <span class="text-muted">
-                                主演：
-                            </span>
+                            <span class="text-muted">主演：</span>
                             <?=$film->staring?>
                             &nbsp;&nbsp;
                         </p>
@@ -31,20 +29,19 @@ $this->title=$film->name;
                             &nbsp;&nbsp;
                         </p>
                         <p class="data">
-                            <span class="text-muted">类型：</span>动画片
+                            <span class="text-muted">类型：</span><?=$film->gtype?>
                             <span class="split-line"></span>
-                            <span class="text-muted hidden-xs">地区：</span>欧美
+                            <span class="text-muted hidden-xs">地区：</span><?=$film->area?>
                             <span class="split-line"></span>
-                            <span class="text-muted hidden-xs">年份：</span>
-                            20150717
+                            <span class="text-muted hidden-xs">年份：</span><?=$film->start?>
                         </p>
                         <p class="desc detail hidden-xs">
                             <span class="left text-muted">简介：</span>
                             <span class="detail-sketch">
-                                <?=mb_substr($film->introduce,0,100,'utf-8')?>...
+                                <?=mb_substr($film->tip,0,100,'utf-8')?>...
                             </span>
                             <span class="detail-content" style="display: none;">
-                                <?=$film->introduce?>...。
+                                <?=$film->tip?>...。
                             </span>
                             <a class="detail-more" href="javascript:;">
                                 详情
