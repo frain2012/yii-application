@@ -143,7 +143,7 @@ var stui = {
 							pinned: "top-fixed-up",
 							unpinned: "top-fixed-down"
 						}
-					}));
+					})).init()
 				});
 				$("#header-bottom", function() {
 					(new Headroom(document.querySelector("#header-bottom"), {
@@ -154,7 +154,7 @@ var stui = {
 							pinned: "bottom-fixed-up",
 							unpinned: "bottom-fixed-down"
 						}
-					}));
+					})).init()
 				})
 			})
 		},
