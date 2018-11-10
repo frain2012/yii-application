@@ -95,7 +95,10 @@ class SiteController extends Controller
     {
         $this->layoutData();
         //电影
-        $movie = TFilm::find()->where(['type'=>1])->limit(15)->all();
+        $movie = TFilm::find()->select(['id','cover','word','name','cover'])->where(['type'=>1])->limit(15)->all();
+        $movieTop=TFilm::find()->select(['id','cover','word','name','cover','gtype','area'])->where(['type'=>1])->orderBy(' id desc')->offset(0)->limit(1)->all();
+        //电影右侧
+        $movieRight=TFilm::find()->select(['id','cover','word','name'])->where(['type'=>1])->orderBy(' id desc')->offset(1)->limit(14)->all();
         //电视剧
         $tv = TFilm::find()->where(['type'=>2])->limit(15)->all();
         //动漫
@@ -104,7 +107,7 @@ class SiteController extends Controller
         $variety = TFilm::find()->where(['type'=>4])->limit(15)->all();
         //类型
         $subType =TType::find()->orderBy(" sort_id asc")->all();
-        return $this->render('index',['movie'=>$movie,'tv'=>$tv,'comic'=>$comic,'variety'=>$variety,'subType'=>$subType]);
+        return $this->render('index',['movie'=>$movie,'tv'=>$tv,'comic'=>$comic,'variety'=>$variety,'subType'=>$subType,'movieRight'=>$movieRight,'movieTop'=>$movieTop]);
     }
 
     /**
