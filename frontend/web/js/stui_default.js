@@ -145,7 +145,7 @@ var stui = {
 						}
 					})).init()
 				});
-				$("#header-bottom", function() {
+				/*$("#header-bottom", function() {
 					(new Headroom(document.querySelector("#header-bottom"), {
 						tolerance: 5,
 						offset: 205,
@@ -155,7 +155,7 @@ var stui = {
 							unpinned: "bottom-fixed-down"
 						}
 					})).init()
-				})
+				})*/
 			})
 		},
 		'autocomplete': function(){
