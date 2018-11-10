@@ -10,7 +10,7 @@ $this->title=$film->name;
             <div class="col-md-wide-75 col-xs-1">
                 <div class="stui-content clearfix">
                     <div class="stui-content__thumb">
-                        <a class="stui-vodlist__thumb v-thumb lazyload" target="_blank" href="/site/play-<?=$film->id?>.html" title="<?=$film->name?>" data-original="<?=$film->cover?>" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fpy3we98xnj305006k0t1.jpg&quot;);">
+                        <a class="stui-vodlist__thumb v-thumb lazyload" target="_blank" href="/site/play-<?=$film->id?>.html" title="<?=$film->name?>" data-original="<?=$film->cover?>" style="background-image: url(&quot;<?=$film->cover?>&quot;);">
 											<span class="play active hidden-xs"></span>
                         </a>
                     </div>
