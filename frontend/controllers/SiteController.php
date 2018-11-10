@@ -95,13 +95,13 @@ class SiteController extends Controller
     {
         $this->layoutData();
         //电影
-        $movie = TFilm::find()->where(['type'=>1])->limit(10)->all();
+        $movie = TFilm::find()->where(['type'=>1])->limit(15)->all();
         //电视剧
-        $tv = TFilm::find()->where(['type'=>2])->limit(10)->all();
+        $tv = TFilm::find()->where(['type'=>2])->limit(15)->all();
         //动漫
-        $comic = TFilm::find()->where(['type'=>3])->limit(10)->all();
+        $comic = TFilm::find()->where(['type'=>3])->limit(15)->all();
         //综艺
-        $variety = TFilm::find()->where(['type'=>4])->limit(10)->all();
+        $variety = TFilm::find()->where(['type'=>4])->limit(15)->all();
         //类型
         $subType =TType::find()->orderBy(" sort_id asc")->all();
         return $this->render('index',['movie'=>$movie,'tv'=>$tv,'comic'=>$comic,'variety'=>$variety,'subType'=>$subType]);
@@ -129,7 +129,7 @@ class SiteController extends Controller
         //类型列表
         $type = TType::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 2,'pageSizeParam'=>false]);
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 12,'pageSizeParam'=>false]);
         $datas = $query->offset($pages->offset)->orderBy(['id' => SORT_DESC])->limit($pages->limit)->all();
         return $this->render('list',['type'=>$type,'curType'=>$curType,'datas'=>$datas,'page' => $pages,'id'=>$id,'sid'=>$sid]);
     }
@@ -148,7 +148,7 @@ class SiteController extends Controller
         //详细列表
         $details = TFilmDetail::find()->where(['fid'=>$id])->orderBy("sort_id asc")->all();
         //猜你喜欢
-        $datas = TFilm::findBySql("SELECT * FROM t_film  WHERE id!=$id  and id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_film))) ORDER BY id LIMIT 0,10")->all();
+        $datas = TFilm::findBySql("SELECT * FROM t_film  WHERE id!=$id  and id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_film))) ORDER BY id LIMIT 0,12")->all();
         return $this->render('detail',['film'=>$film,'datas'=>$datas,'channel'=>$channel,'details'=>$details]);
     }
 
@@ -170,7 +170,7 @@ class SiteController extends Controller
         //详细列表
         $details = TFilmDetail::find()->where(['fid'=>$fid])->orderBy("sort_id asc")->all();
         //猜你喜欢
-        $datas = TFilm::findBySql("SELECT * FROM t_film  WHERE id!=$fid  and id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_film))) ORDER BY id LIMIT 0,10")->all();
+        $datas = TFilm::findBySql("SELECT * FROM t_film  WHERE id!=$fid  and id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_film))) ORDER BY id LIMIT 0,12")->all();
         return $this->render('play',['film'=>$film,'datas'=>$datas,'channel'=>$channel,'details'=>$details,'id'=>$id]);
     }
 
