@@ -54,9 +54,7 @@ $this->title=$film->name;
                         <div class="play-btn clearfix">
                             <div class="share bdsharebuttonbox hidden-sm hidden-xs pull-right">
                             </div>
-                            <a class="btn btn-primary" target="_blank" href="/site/play-<?=$film->id?>-0-1.html">
-                                立即播放
-                            </a>
+                            <a class="btn btn-primary" target="_blank">立即播放</a>
                         </div>
                     </div>
                 </div>
