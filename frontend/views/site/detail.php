@@ -59,7 +59,7 @@ $this->title=$film->name;
             <div class="col-md-wide-25 hidden-md hidden-sm hidden-xs">
                 <div class="text-center" style="padding: 45px;">
                     <p>
-                        <img class="qrcode" width="180" height="180" src="https://ww1.sinaimg.cn/large/006MBSBsgy1fs4odba4voj305k05k3yo.jpg">
+                        <img class="qrcode" width="180" height="180" src="http://frains.oss-cn-shenzhen.aliyuncs.com/movie/qrcode_for_gh_2da5d9c9519a_430.jpg">
                     </p>
                     <p class="font-12">
                         扫码用手机观看
