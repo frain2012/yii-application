@@ -39,7 +39,8 @@ class TFilm extends \yii\db\ActiveRecord
         return [
             [['type', 'year'], 'integer'],
             [['create_at'], 'safe'],
-            [['name', 'cover', 'staring', 'director', 'introduce', 'tip'], 'string', 'max' => 255],
+            [['name', 'cover', 'director'], 'string', 'max' => 255],
+            [['staring', 'introduce', 'tip'], 'string', 'max' => 2048],
             [['sub_type', 'quality'], 'string', 'max' => 32],
             [['area'], 'string', 'max' => 16],
         ];

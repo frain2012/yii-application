@@ -99,7 +99,7 @@ $this->title=$film->name;
                         <?php if ($item->id==1){?>
                             <div class="a_copy"><?=$item1->value?></div>
                         <?php }else{?>
-                            <a title="<?=$item1->key?>" href="/site/play-<?=$item1->fid?>-<?=$item1->id?>.html" target="_self"><?=$item1->key?></a>
+                            <a title="<?=$item1->keyn?>" href="/site/play-<?=$item1->fid?>-<?=$item1->id?>.html" target="_self"><?=$item1->keyn?></a>
                         <?php }?>
                     </li>
                     <?php } } }?>

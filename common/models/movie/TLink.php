@@ -12,8 +12,8 @@ use Yii;
  * @property string $name 名称
  * @property string $value 值
  * @property string $image 图片
+ * @property string $link
  * @property int $sort_id 排序Id
- * @property string $link 链接
  */
 class TLink extends \yii\db\ActiveRecord
 {
@@ -49,6 +49,7 @@ class TLink extends \yii\db\ActiveRecord
             'name' => 'Name',
             'value' => 'Value',
             'image' => 'Image',
+            'link' => 'Link',
             'sort_id' => 'Sort ID',
         ];
     }
