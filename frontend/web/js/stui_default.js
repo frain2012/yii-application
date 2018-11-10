@@ -143,9 +143,9 @@ var stui = {
 							pinned: "top-fixed-up",
 							unpinned: "top-fixed-down"
 						}
-					})).init()
+					}));
 				});
-				/*$("#header-bottom", function() {
+				$("#header-bottom", function() {
 					(new Headroom(document.querySelector("#header-bottom"), {
 						tolerance: 5,
 						offset: 205,
@@ -154,8 +154,8 @@ var stui = {
 							pinned: "bottom-fixed-up",
 							unpinned: "bottom-fixed-down"
 						}
-					})).init()
-				})*/
+					}));
+				})
 			})
 		},
 		'autocomplete': function(){
