@@ -12,7 +12,7 @@
                         <li class="visible-xs"><a class="open-popup" href="javascript:;"><i class="icon iconfont icon-viewgallery"></i></a></li>
                     </ul>
                     <div class="stui-header__search">
-                        <form name="formsearch" id="formsearch" action="/search.php" method="post" autocomplete="off">
+                        <form name="formsearch" id="formsearch" action="" method="post" autocomplete="off">
                             <input class="form-control" id="wd" placeholder="输入影片关键词..." name="searchword" type="text" required="" />
                             <input type="submit" id="searchbutton" value="" class="hide" />
                             <button class="submit" id="submit" onclick="$('#formsearch').submit();"><i class="icon iconfont icon-search"></i></button>

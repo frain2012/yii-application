@@ -4,7 +4,7 @@
 
 ?>
 <!--轮播-->
-<div class="stui-pannel stui-pannel-bg clearfix">
+<!--div class="stui-pannel stui-pannel-bg clearfix">
     <div class="stui-pannel-box clearfix">
         <div class="stui-pannel-bd">
             <div class="carousel carousel_default carousel_center">
@@ -21,7 +21,7 @@
         </div>
 
     </div>
-</div>
+</div-->
 <!--轮播-->
 <!--电影-->
 <?php  if(!empty($movie)){?>
@@ -48,7 +48,7 @@
                         <li class="col-md-5 col-sm-4 col-xs-3">
                             <div class="stui-vodlist__box">
                                 <a class="stui-vodlist__thumb lazyload" target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>" data-original="<?=$item->cover?>" style="background-image: url(&quot;<?=$item->cover?>&quot;);">
-                                    <span class="play hidden-xs"></span><span class="pic-text text-right">BD1280国语中字</span></a>
+                                    <span class="play hidden-xs"></span><span class="pic-text text-right"><?=$item->word?></span></a>
                                 <div class="stui-vodlist__detail">
                                     <h4 class="title text-overflow"><a target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>"><?=$item->name?></a></h4>
                                     <p class="text text-overflow text-muted hidden-xs"><?=$item->staring?> </p>
@@ -61,32 +61,35 @@
         <div class="col-lg-wide-25 hidden-md hidden-sm hidden-xs">
             <div class="stui-pannel_hd">
                 <div class="stui-pannel__head clearfix">
-                    <a class="more text-muted pull-right" href="/search.php?searchtype=5&amp;tid=1&amp;order=hit">更多 <i class="icon iconfont icon-more"></i></a>
+                    <a class="more text-muted pull-right" href="/site/list-1.html">更多 <i class="icon iconfont icon-more"></i></a>
                     <h3 class="title"><img src="/images/icon_12.png">最近更新</h3>
                 </div>
             </div>
             <div class="stui-pannel_bd">
+
                 <ul class="stui-vodlist__media active col-pd clearfix">
+                    <?php foreach ($movieTop as $k=> $item){?>
                     <li>
                         <div class="thumb">
-                            <a class="m-thumb stui-vodlist__thumb lazyload" target="_blank" href="/film/index35881.html" title="亚当·桑德勒：100%新鲜" data-original="https://ww1.sinaimg.cn/large/006MBSBsgy1fwj3vyhh92j307i0aiq3a.jpg" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fwj3vyhh92j307i0aiq3a.jpg&quot;);"><span class="pic-tag pic-tag-h">1</span></a>
+                            <a class="m-thumb stui-vodlist__thumb lazyload" target="_blank" href="/site/detail-<?=$item->id?>.html" title="" data-original="<?=$item->cover?>" style="background-image: url(&quot;<?=$item->cover?>&quot;);"><span class="pic-tag pic-tag-h">1</span></a>
                         </div>
                         <div class="detail detail-side">
-                            <h4 class="title"><a target="_blank" href="/film/index35881.html"><i class="icon iconfont icon-more text-muted pull-right"></i> 亚当·桑德勒：10..</a></h4>
-                            <p class="font-12"><span class="text-muted">类型：</span>喜剧片 , <span class="text-muted">地区：</span>美国</p>
-                            <p class="font-12 margin-0"><span class="text-muted">主演：</span>亚当·桑德勒 </p>
+                            <h4 class="title"><a target="_blank" href="/site/detail-<?=$item->id?>.html"><i class="icon iconfont icon-more text-muted pull-right"></i><?=$item->name?></a></h4>
+                            <p class="font-12"><span class="text-muted">类型：</span><?=$item->gtype?> , <span class="text-muted">地区：</span><?=$item->area?></p>
+                            <p class="font-12 margin-0"><span class="text-muted">主演：</span></p>
                         </div></li>
+                        <?php }?>
                 </ul>
                 <ul class="stui-vodlist__rank col-pd clearfix">
-                    <li><a target="_blank" href="/film/index29737.html" title="超人总动员2"><span class="text-muted pull-right">BD1280高..</span><span class="badge badge-second">2</span>超人总动员2</a></li>
-                    <li><a target="_blank" href="/film/index35880.html" title="教父3"><span class="text-muted pull-right">高清</span><span class="badge badge-third">3</span>教父3</a></li>
-                    <li><a target="_blank" href="/film/index35879.html" title="教父"><span class="text-muted pull-right">高清</span><span class="badge">4</span>教父</a></li>
-                    <li><a target="_blank" href="/film/index9852.html" title="大闹天竺"><span class="text-muted pull-right">高清</span><span class="badge">5</span>大闹天竺</a></li>
-                    <li><a target="_blank" href="/film/index32693.html" title="金刚狼"><span class="text-muted pull-right">高清</span><span class="badge">6</span>金刚狼</a></li>
-                    <li><a target="_blank" href="/film/index35656.html" title="野小子们"><span class="text-muted pull-right">BD高清</span><span class="badge">7</span>野小子们</a></li>
-                    <li><a target="_blank" href="/film/index35876.html" title="好莱坞大道女王"><span class="text-muted pull-right">BD高清</span><span class="badge">8</span>好莱坞大道女王</a></li>
-                    <li><a target="_blank" href="/film/index35605.html" title="加尔维斯顿"><span class="text-muted pull-right">BD高清</span><span class="badge">9</span>加尔维斯顿</a></li>
-                    <li><a target="_blank" href="/film/index32934.html" title="完美陌生人(西班牙版)"><span class="text-muted pull-right">BD高清</span><span class="badge">10</span>完美陌生人(西..</a></li>
+                    <?php foreach ($movieRight as $k=> $item){?>
+                    <li>
+                        <a target="_blank" href="/site/detail-<?=$item->id?>.html" title="<?=$item->name?>">
+                            <span class="text-muted pull-right"></span>
+                            <span class="badge <?php if($k==0){ echo "badge-second";  }if($k==1){ echo "badge-third";} ?>"><?=$k+2?></span>
+                            <?=strstr($item->name,"《")?>
+                        </a>
+                    </li>
+                    <?php }?>
                 </ul>
             </div>
             <!--right-->

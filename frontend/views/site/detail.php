@@ -10,7 +10,7 @@ $this->title=$film->name;
             <div class="col-md-wide-75 col-xs-1">
                 <div class="stui-content clearfix">
                     <div class="stui-content__thumb">
-                        <a class="stui-vodlist__thumb v-thumb lazyload" target="_blank" href="/site/play-<?=$film->id?>.html" title="<?=$film->name?>" data-original="<?=$film->cover?>" style="background-image: url(&quot;https://ww1.sinaimg.cn/large/006MBSBsgy1fpy3we98xnj305006k0t1.jpg&quot;);">
+                        <a class="stui-vodlist__thumb v-thumb lazyload" target="_blank" href="/site/play-<?=$film->id?>.html" title="<?=$film->name?>" data-original="<?=$film->cover?>" style="background-image: url(&quot;<?=$film->cover?>&quot;);">
 											<span class="play active hidden-xs"></span>
                         </a>
                     </div>
@@ -19,9 +19,7 @@ $this->title=$film->name;
                             <?=$film->name?>
                         </h3>
                         <p class="data">
-                            <span class="text-muted">
-                                主演：
-                            </span>
+                            <span class="text-muted">主演：</span>
                             <?=$film->staring?>
                             &nbsp;&nbsp;
                         </p>
@@ -31,20 +29,19 @@ $this->title=$film->name;
                             &nbsp;&nbsp;
                         </p>
                         <p class="data">
-                            <span class="text-muted">类型：</span>动画片
+                            <span class="text-muted">类型：</span><?=$film->gtype?>
                             <span class="split-line"></span>
-                            <span class="text-muted hidden-xs">地区：</span>欧美
+                            <span class="text-muted hidden-xs">地区：</span><?=$film->area?>
                             <span class="split-line"></span>
-                            <span class="text-muted hidden-xs">年份：</span>
-                            20150717
+                            <span class="text-muted hidden-xs">年份：</span><?=$film->start?>
                         </p>
                         <p class="desc detail hidden-xs">
                             <span class="left text-muted">简介：</span>
                             <span class="detail-sketch">
-                                <?=mb_substr($film->introduce,0,100,'utf-8')?>...
+                                <?=mb_substr($film->tip,0,100,'utf-8')?>...
                             </span>
                             <span class="detail-content" style="display: none;">
-                                <?=$film->introduce?>...。
+                                <?=$film->tip?>...。
                             </span>
                             <a class="detail-more" href="javascript:;">
                                 详情
@@ -54,9 +51,7 @@ $this->title=$film->name;
                         <div class="play-btn clearfix">
                             <div class="share bdsharebuttonbox hidden-sm hidden-xs pull-right">
                             </div>
-                            <a class="btn btn-primary" target="_blank" href="/site/play-<?=$film->id?>-0-1.html">
-                                立即播放
-                            </a>
+                            <a class="btn btn-primary" target="_blank">立即播放</a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +59,7 @@ $this->title=$film->name;
             <div class="col-md-wide-25 hidden-md hidden-sm hidden-xs">
                 <div class="text-center" style="padding: 45px;">
                     <p>
-                        <img class="qrcode" width="180" height="180" src="https://ww1.sinaimg.cn/large/006MBSBsgy1fs4odba4voj305k05k3yo.jpg">
+                        <img class="qrcode" width="180" height="180" src="http://frains.oss-cn-shenzhen.aliyuncs.com/movie/qrcode_for_gh_2da5d9c9519a_430.jpg">
                     </p>
                     <p class="font-12">
                         扫码用手机观看
@@ -99,7 +94,7 @@ $this->title=$film->name;
                         <?php if ($item->id==1){?>
                             <div class="a_copy"><?=$item1->value?></div>
                         <?php }else{?>
-                            <a title="<?=$item1->key?>" href="/site/play-<?=$item1->fid?>-<?=$item1->id?>.html" target="_self"><?=$item1->key?></a>
+                            <a title="<?=$item1->keyn?>" href="/site/play-<?=$item1->fid?>-<?=$item1->id?>.html" target="_self"><?=$item1->keyn?></a>
                         <?php }?>
                     </li>
                     <?php } } }?>
