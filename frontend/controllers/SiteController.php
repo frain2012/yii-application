@@ -95,10 +95,10 @@ class SiteController extends Controller
     {
         $this->layoutData();
         //电影
-        $movie = TFilm::find()->select(['id','cover','word','name','cover'])->where(['type'=>1])->limit(15)->all();
-        $movieTop=TFilm::find()->select(['id','cover','word','name','cover','gtype','area'])->where(['type'=>1])->orderBy(' id desc')->offset(0)->limit(1)->all();
+        $movie = TFilm::find()->select(['id','cover','word','name','cover'])->where(['type'=>1])->orderBy(' id desc')->limit(15)->all();
+        $movieTop=TFilm::find()->select(['id','cover','word','name','cover','gtype','area'])->where(['type'=>1])->orderBy(' id desc')->offset(15)->limit(1)->all();
         //电影右侧
-        $movieRight=TFilm::find()->select(['id','cover','word','name'])->where(['type'=>1])->orderBy(' id desc')->offset(1)->limit(14)->all();
+        $movieRight=TFilm::find()->select(['id','cover','word','name'])->where(['type'=>1])->orderBy(' id desc')->offset(16)->limit(14)->all();
         //电视剧
         $tv = TFilm::find()->where(['type'=>2])->limit(15)->all();
         //动漫
