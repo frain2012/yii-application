@@ -74,7 +74,7 @@
                             <a class="m-thumb stui-vodlist__thumb lazyload" target="_blank" href="/site/detail-<?=$item->id?>.html" title="" data-original="<?=$item->cover?>" style="background-image: url(&quot;<?=$item->cover?>&quot;);"><span class="pic-tag pic-tag-h">1</span></a>
                         </div>
                         <div class="detail detail-side">
-                            <h4 class="title"><a target="_blank" href="/site/detail-<?=$item->id?>.html"><i class="icon iconfont icon-more text-muted pull-right"></i><?=$item->name?></a></h4>
+                            <h4 class="title"><a target="_blank" href="/site/detail-<?=$item->id?>.html"><i class="icon iconfont icon-more text-muted pull-right"></i><?=strstr($item->name,"《")?></a></h4>
                             <p class="font-12"><span class="text-muted">类型：</span><?=$item->gtype?> , <span class="text-muted">地区：</span><?=$item->area?></p>
                             <p class="font-12 margin-0"><span class="text-muted">主演：</span></p>
                         </div></li>
