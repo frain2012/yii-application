@@ -19,7 +19,7 @@
                 <p class="text-center font-12">扫码用手机访问</p>
             </div>
         </div></li>
-    <li><a href="/gbook.php"><i class="icon iconfont icon-comments"></i></a></li>
+    <li><a href="javascript:;"><i class="icon iconfont icon-comments"></i></a></li>
 </ul>
 <div class="hide">
     <script src="https://s19.cnzz.com/z_stat.php?id=1275136617&web_id=1275136617" language="JavaScript"></script>
@@ -39,7 +39,7 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?8dcbc9caddf484a9337335ecd47e5df8";
+            hm.src = "https://hm.baidu.com/hm.js?ea6fd138b833b1de4e0f0b15e4388f00";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
